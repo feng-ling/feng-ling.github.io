@@ -180,7 +180,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="5">
-<input type="hidden" id="yelog_site_word_count" value="2.5k">
+<input type="hidden" id="yelog_site_word_count" value="2.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -346,12 +346,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-11-01 20:20:49'>2020-10-30 21:38</time>
+            发布时间 : <time class="date" title='最后更新: 2020-11-01 20:23:58'>2020-10-30 21:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:930</span>
+        <span>字数:974</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -392,8 +392,10 @@
 <hr>
 <h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p>Transformer这个子网络结构来自于NLP领域的一个基于自注意力机制的模型，具体出处是在2017年的NIPS上发表的一篇<a href="https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf" target="_blank" rel="noopener">《Attention Is All You Need》</a>。谷歌发布的BERT模型里面就用到了这个网络。<br><img src="/img/transformer.png" alt="Transformer"><br>根据论文里面的解释，我觉得这一块儿使用Transformer这个网络是为了对DGCNN学出来的特征进行二次学习，使得源点云的特征中包含目标点云的特征，反之亦然。这样，我们的Transformer网络学出来的源点云与目标点云的特征会在很大程度上相似，因此对于我们所要进行的点云配准任务是更加有利的。</p>
 <hr>
-<h2 id="Pointer"><a href="#Pointer" class="headerlink" title="Pointer"></a>Pointer</h2><p>论文中DCP的第三部分是生成一个“Pointer”，我的理解是，这一块儿是利用上一步中生成的源、目标点云的特征矩阵来求两者之间对应的点对关系的，这里面采用了不同于ICP算法的“硬赋值”操作，它将为源点云中的每个点生成指向目标点云中每个点的概率，最后对进行加权求和就生成了源点云中每个点的对应点。</p>
-<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p>论文中DCP的最后一块儿是SVD层，模仿了ICP求解的过程，这个SVD层在Tensorflow和Pytorch中都有集成，可以在网络中直接使用。</p>
+<h2 id="Pointer"><a href="#Pointer" class="headerlink" title="Pointer"></a>Pointer</h2><p>论文中DCP的第三部分是生成一个“Pointer”，我的理解是，这一块儿是利用上一步中生成的源、目标点云的特征矩阵来求两者之间对应的点对关系的，这里面采用了不同于ICP算法的“硬赋值”操作，它将为源点云中的每个点生成指向目标点云中每个点的概率，最后对进行加权求和就生成了源点云中每个点的对应点。<br>这一部分也算是本文里面的相对于传统ICP的一个创新点。</p>
+<hr>
+<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p>论文中DCP的最后一块儿是SVD层，模仿了ICP求解的过程，这个SVD层在Tensorflow和Pytorch中都有集成，可以在网络中直接使用。<br>使用SVD比直接用MLP直接给出Pose要合理，实验效果也好。</p>
+<hr>
 <h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p>本文做了很多的实验，表1、表2是测试模型的泛化性能。<br><img src="/img/DCP1.png" alt="Table 1"><br><img src="/img/DCP2.png" alt="Table 2"><br>表3测试了模型的鲁棒性，表4测试了时间效率。<br><img src="/img/DCP3.png" alt="Table 3"><br><img src="/img/DCP4.png" alt="Table 4"><br>表5、6、7都是消融实验，验证了模型各个子网络存在的必要性。<br><img src="/img/DCP5.png" alt="Table 5"><br><img src="/img/DCP6.png" alt="Table 6"></p>
 
       
