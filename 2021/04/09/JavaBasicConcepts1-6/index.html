@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo使用说明 | Feng-ling</title>
-  <meta name="keywords" content=" hexo , 3-hexo ">
-  <meta name="description" content="Hexo使用说明 | Feng-ling">
+  <title>JavaBasicConcepts1-6 | Feng-ling</title>
+  <meta name="keywords" content=" Java基本概念 ">
+  <meta name="description" content="JavaBasicConcepts1-6 | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:type" content="website">
@@ -345,9 +345,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Test" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-JavaBasicConcepts1-6" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hexo使用说明</h1>
+        <h1 class="article-title">JavaBasicConcepts1-6</h1>
     
     <div class="article-meta">
         
@@ -357,7 +357,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="工具">工具</a>
+            <a  data-rel="Java基础知识">Java基础知识</a>
             
         </span>
         
@@ -365,21 +365,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">hexo</a>
-            
-            <a class="color2">3-hexo</a>
+            <a class="color4">Java基本概念</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-10-30 21:18:59'>2020-06-05 15:02</time>
+            发布时间 : <time class="date" title='最后更新: 2021-04-10 13:21:23'>2021-04-09 17:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:79</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -398,7 +396,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Java语言有那些优点？"><span class="toc-text">1、Java语言有那些优点？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#２、Java与C-C-有什么异同？"><span class="toc-text">２、Java与C&#x2F;C++有什么异同？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、为什么需要-public-static-void-main-String-args-这个方法？"><span class="toc-text">3、为什么需要 public static void main(String[] args)这个方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#public-static-void-main-String-args-为Java程序的入口方法，JVM在运行程序时，会首先查找mian-方法。其中，public-是权限修饰符，表明任何类或对象都可以访问这个方法static表明main-方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问，-可以直接通过类名-main-直接访问，JVM在启动时就是按照上述方法的签名（必须有public-与static-修饰，返回值为void-且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void-表明方法没有返回值，main-是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args-为开发人员在命令行状态下与程序交互提供了一种手段。"><span class="toc-text">public static void main (String[ ] args) 为Java程序的入口方法，JVM在运行程序时，会首先查找mian()方法。其中，public 是权限修饰符，表明任何类或对象都可以访问这个方法static表明main()方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问， 可以直接通过类名.main()直接访问，JVM在启动时就是按照上述方法的签名（必须有public 与static 修饰，返回值为void, 且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void 表明方法没有返回值，main 是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args 为开发人员在命令行状态下与程序交互提供了一种手段。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、如何实现mian-方法执行前输出“Hello-World”？"><span class="toc-text">4、如何实现mian()方法执行前输出“Hello World”？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Java语言中，-由千静态块在类被加载时就会被调用，-因此可以在main方法执行前，利用静态块static-System-out-println-“Hello-World”-实现输出-“Hello-World”-的功能。"><span class="toc-text">在Java语言中， 由千静态块在类被加载时就会被调用， 因此可以在main方法执行前，利用静态块static{System.out.println(“Hello World”);}实现输出 “Hello World” 的功能。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、Java程序的初始化顺序是怎么样的？"><span class="toc-text">5、Java程序的初始化顺序是怎么样的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、Java中的作用域有那些？"><span class="toc-text">6、Java中的作用域有那些？</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -414,7 +412,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>关于Hexo的使用，可以参照<a href="https://hexo.bootcss.com/" target="_blank" rel="noopener">Hexo中文官网</a>，另有知乎大佬的使用教程<a href="https://zhuanlan.zhihu.com/p/85037427" target="_blank" rel="noopener">Hexo系列</a></p>
+        <h2 id="1、Java语言有那些优点？"><a href="#1、Java语言有那些优点？" class="headerlink" title="1、Java语言有那些优点？"></a>1、Java语言有那些优点？</h2><p>  （1）Java语言为纯面向对象语言。因此，Java能够直接反映现实生活中的对象，例如，货车、动物等，因而开发人员编写程序更为容易。<br>  （2）平台无关性。这是因为Java为解释型语言，编译器会将Java代码变成.class字节码文件，在JVM上解释执行。无论是在Windows、Linux还是Mac上对Java程序进行编译，编译后的程序在其他平台上都可以运行。<br>  （3）Java提供了很多的内置类库，通过这些内置的类库，简化了开发人员的程序设计工作，同时缩短了项目开发时间。<br>  （4）Java提供了对web应用开发的支持。JSP、Applet、Servlet可以开发web程序；Socket’RMI可以是开发分布式应用程序的类库。<br>  （5）Java具有较好的安全性和健壮性。因为Java提供了防止恶意代码攻击的安全机制（数组边界检测和Bytecode校验等），同时Java的强类型机制、垃圾回收器、异常处理机制和安全检查机制保证了Java程序的健壮性。<br>　（6）比较好理解。因为Java去除了C++中比较难以理解的头指针、结构、运算符重载、多重继承等，使得程序更加严谨，简洁。<br>常见笔试题：<br>Java语言是由（Ｃ＋＋）改进并重新设计而来的。</p>
+<hr>
+<h2 id="２、Java与C-C-有什么异同？"><a href="#２、Java与C-C-有什么异同？" class="headerlink" title="２、Java与C/C++有什么异同？"></a>２、Java与C/C++有什么异同？</h2><p>相同点：<br>1）Java和C++都是面向对象语言，都使用了面向对象的思想（封装、继承、多态等）<br>2）由于面向对象有继承、组合等特性，因此二者代码都有很好的可重用性。<br>不同点：<br>1）Java为解释性语言，其运行过程为：程序源代码经过 Java编译器编译成字节码文件.class， 然后由JVM解释执行。而C/C++为编译型语言，源代码经过编译和链接后生成可执行的二进制代码。因此，Java的执行速度比C/C++ 慢,但是Java 能够跨平台执行，而C/C++不能。<br>2) Java为纯面向对象语言，所有代码（包括函数、变量等）必须在类中实现， 除基本数据类型（包括int、float等)外，所有类型都是类。<br>3) 与C/C++语言相比，Java语言中没有指针的概念，这有效防止了C/C++ 语言中操作指针可能引起的系统问题，从而使程序变得更加安全。<br>4) 与C++语言相比，Java 语言不支持多重继承， 但是Java语言引入了接口的概念，可以同时实现多个接口，可以通过实现多个接口来实现与C++语言中多重继承类似的目的。<br>5) 在C++语言中， 需要开发人员去管理对内存的分配（包括申请与释放），而 Java 语言提供了垃圾回收器来实现垃圾的自动回收，不需要程序显式地管理内存的分配。<br>常见笔试题：<br>下列说法中，错误的有( ABC)。<br> A.Java 面向对象语言容许单独的过程与函数存在。<br> B.Java 面向对象语言容许单独的方法存在<br> C.Java 语言中的方法屈于类中的成员 (member)<br> D.Java 语言中的方法必定隶属于某一类（对象），调用方法与过程或函数相同。</p>
+<hr>
+<h2 id="3、为什么需要-public-static-void-main-String-args-这个方法？"><a href="#3、为什么需要-public-static-void-main-String-args-这个方法？" class="headerlink" title="3、为什么需要 public static void main(String[] args)这个方法？"></a>3、为什么需要 public static void main(String[] args)这个方法？</h2><h2 id="public-static-void-main-String-args-为Java程序的入口方法，JVM在运行程序时，会首先查找mian-方法。其中，public-是权限修饰符，表明任何类或对象都可以访问这个方法static表明main-方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问，-可以直接通过类名-main-直接访问，JVM在启动时就是按照上述方法的签名（必须有public-与static-修饰，返回值为void-且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void-表明方法没有返回值，main-是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args-为开发人员在命令行状态下与程序交互提供了一种手段。"><a href="#public-static-void-main-String-args-为Java程序的入口方法，JVM在运行程序时，会首先查找mian-方法。其中，public-是权限修饰符，表明任何类或对象都可以访问这个方法static表明main-方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问，-可以直接通过类名-main-直接访问，JVM在启动时就是按照上述方法的签名（必须有public-与static-修饰，返回值为void-且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void-表明方法没有返回值，main-是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args-为开发人员在命令行状态下与程序交互提供了一种手段。" class="headerlink" title="public static void main (String[ ] args) 为Java程序的入口方法，JVM在运行程序时，会首先查找mian()方法。其中，public 是权限修饰符，表明任何类或对象都可以访问这个方法static表明main()方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问， 可以直接通过类名.main()直接访问，JVM在启动时就是按照上述方法的签名（必须有public 与static 修饰，返回值为void, 且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void 表明方法没有返回值，main 是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args 为开发人员在命令行状态下与程序交互提供了一种手段。"></a>public static void main (String[ ] args) 为Java程序的入口方法，JVM在运行程序时，会首先查找mian()方法。其中，public 是权限修饰符，表明任何类或对象都可以访问这个方法static表明main()方法是一个静态方法，即方法中的代码是存储在静态存储区的，只要类被加载后，就可以使用该方法而不需要通过实例化对象来访问， 可以直接通过类名.main()直接访问，JVM在启动时就是按照上述方法的签名（必须有public 与static 修饰，返回值为void, 且方法的参数为字符串数组）来查找方法的入口地址，若能找到，就执行；找不到，则会报错。void 表明方法没有返回值，main 是JVM识别的特殊方法名，是程序的入口方法。字符串数组参数args 为开发人员在命令行状态下与程序交互提供了一种手段。</h2><h2 id="4、如何实现mian-方法执行前输出“Hello-World”？"><a href="#4、如何实现mian-方法执行前输出“Hello-World”？" class="headerlink" title="4、如何实现mian()方法执行前输出“Hello World”？"></a>4、如何实现mian()方法执行前输出“Hello World”？</h2><h2 id="在Java语言中，-由千静态块在类被加载时就会被调用，-因此可以在main方法执行前，利用静态块static-System-out-println-“Hello-World”-实现输出-“Hello-World”-的功能。"><a href="#在Java语言中，-由千静态块在类被加载时就会被调用，-因此可以在main方法执行前，利用静态块static-System-out-println-“Hello-World”-实现输出-“Hello-World”-的功能。" class="headerlink" title="在Java语言中， 由千静态块在类被加载时就会被调用， 因此可以在main方法执行前，利用静态块static{System.out.println(“Hello World”);}实现输出 “Hello World” 的功能。"></a>在Java语言中， 由千静态块在类被加载时就会被调用， 因此可以在main方法执行前，利用静态块static{System.out.println(“Hello World”);}实现输出 “Hello World” 的功能。</h2><h2 id="5、Java程序的初始化顺序是怎么样的？"><a href="#5、Java程序的初始化顺序是怎么样的？" class="headerlink" title="5、Java程序的初始化顺序是怎么样的？"></a>5、Java程序的初始化顺序是怎么样的？</h2><p>在Java语言中，当实例化对象时，对象所在类的所有成员变量首先要进行初始化，只有当所有类成员完成初始化后，才会调用对象所在类的构造函数创建对象。<br>Java程序的初始化一般遵循3个原则（优先级依次递减）：心静态对象（变量）优先千非静态对象（变量）初始化，其中， 静态对象（变量）只初始化一次，而非静态对象（变量）可能会初始化多次。＠父类优先于子类进行初始化。 ＠按照成员变量的定义顺序进行初始化。即使变量定义散布于方法定义之中，它们依然在任何方法（包括构造函数）被调用之前先初始化。<br>Java程序初始化工作可以在许多不同的代码块中来完成（例如静态代码块、构造函数等），它们执行的顺序如下：父类静态变量、 父类静态代码块、子类静态变量、子类静态代码块、父类非静态变量、父类非静态代码块、父类构造函数、子类非静态变量、子类非静态代码块、子类构造函数。</p>
+<hr>
+<h2 id="6、Java中的作用域有那些？"><a href="#6、Java中的作用域有那些？" class="headerlink" title="6、Java中的作用域有那些？"></a>6、Java中的作用域有那些？</h2><p>) public。 表明该成员变量或方法对所有类或对象都是可见的， 所有类或对象都可以直接访问。<br>2) private。 表明该成员变最或方法是私有的， 只有当前类对其具有访问权限， 除此之外的其他类或者对象都没有访问权限。<br>3) protected。 表明该成员变量或方法对自己及其子类是可见的， 即自己和子类具有权限访间。除此之外的其他类或对象都没有访问权限。<br>4) default。 表明该成员变量或方法只有自己和与其位千同一包内的类可见。 若父类与子类位千同一个包内， 则子类对父类的 default成员变量或方法都有访问权限；若父类与子类位于不同的package(包）内，则没有访问权限。<br>需要注意的是， 这些修饰符只能修饰成员变量，不能用来修饰局部变量。private与protected不能用来修饰外部类（只有public、abstract或 final能用来修饰外部类）。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>

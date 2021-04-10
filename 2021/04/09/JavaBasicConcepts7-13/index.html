@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Feng-ling</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Feng-ling">
+  <title>JavaBasicConcepts7-13 | Feng-ling</title>
+  <meta name="keywords" content=" Java基本概念 ">
+  <meta name="description" content="JavaBasicConcepts7-13 | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/timg.jpg" />
@@ -343,12 +343,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-JavaBasicConcepts7-13" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">JavaBasicConcepts7-13</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Java基础知识">Java基础知识</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">Java基本概念</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-04-10 13:21:38'>2021-04-09 20:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7、一个Java文件中是否可以定义多个类？"><span class="toc-text">7、一个Java文件中是否可以定义多个类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"><span class="toc-text">一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、什么是构造函数？"><span class="toc-text">8、什么是构造函数？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、为什么Java中有些接口没有任何方法？"><span class="toc-text">9、为什么Java中有些接口没有任何方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10、Java中的clone方法有什么作用？（★）"><span class="toc-text">10、Java中的clone方法有什么作用？（★）</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -361,37 +409,28 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<p>以上是博客模板3-hexo中的一段话，我借用这段话，也期望自己能够达到第三阶段的境界。</p>
-<p>##关于本站<br>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题个人觉得还是不错的。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面配置信息 <a href='https://hexo.io/zh-cn/docs/configuration.html/' target="_blank" rel="noopener">hexo的config_说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="7、一个Java文件中是否可以定义多个类？"><a href="#7、一个Java文件中是否可以定义多个类？" class="headerlink" title="7、一个Java文件中是否可以定义多个类？"></a>7、一个Java文件中是否可以定义多个类？</h2><h2 id="一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"><a href="#一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。" class="headerlink" title="一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"></a>一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。</h2><h2 id="8、什么是构造函数？"><a href="#8、什么是构造函数？" class="headerlink" title="8、什么是构造函数？"></a>8、什么是构造函数？</h2><p>构造函数是一种特殊的函数，用来在对象实例化时初始化对象的成员变量。在Java语言中，构造函数具有以下特点。<br>1)构造函数必须与类的名字相同，并且不能有返回值（返回值也不能为void)。<br>2)每个类可以有多个构造函数。当开发人员没有提供构造函数时，编译器在把源代码编成字节码的过程中会提供一个没有参数默认的构造函数，但该构造函数不会执行任何代码。如果开发人员提供了构造函数，那么编译器就不会再创建默认的构造函数了。<br>3)构造函数可以有0个、1个或1个以上的参数。<br>4)构造函数总是伴随着new操作一起调用，且不能由程序的编写者直接调用，必须要由系统调用。构造函数在对象实例化时会被自动调用，且只运行一次；而普通的方法是在程序执行到它时被调用，且可以被该对象调用多次。<br>5)构造函数的主要作用是完成对象的初始化工作。<br>6)构造函数不能被继承，因此，它不能被覆盖，但是构造函数能够被重载，可以使用不同的参数个数或参数类型来定义多个构造函数。<br>7)子类可以通过super关键字来显式地调用父类的构造函数，当父类没有提供无参数的构造函数时，子类的构造函数中必须显式地调用父类的构造函数。如果父类提供了无参数的构造函数，此时子类的构造函数就可以不显式地调用父类的构造函数，在这种情况下编译器会默认调用父类提供的无参数的构造函数。当有父类时，在实例化对象时会先执行父类的构造函数，然后执行子类的构造函数。<br>8)当父类和子类都没有定义构造函数时， 编译器会为父类生成一个默认的无参数的构造函数，给子类也生成一个默认的无参数的构造函数。此外，默认构造器的修饰符只跟当前类的修饰符有关（例如，一个类被定义为public, 那么它的构造函数也是public)。</p>
+<hr>
+<h2 id="9、为什么Java中有些接口没有任何方法？"><a href="#9、为什么Java中有些接口没有任何方法？" class="headerlink" title="9、为什么Java中有些接口没有任何方法？"></a>9、为什么Java中有些接口没有任何方法？</h2><p>由于Java不支持多重继承，即一个类只能有一个父类，为了克服单继承的缺点，Java语言引人了接口这一概念。接口是抽象方法定义的集合（接口中也可以定义一些常量值），是一种特殊的抽象类。接口中只包含方法的定义，没有方法的实现。接口中的所有方法都是抽象的。接口中成员的作用域修饰符都是public，接口中的常量值默认使用public static final修饰。由于一个类可以实现多个接口，因此通常可以采用实现多个接口的方式来间接达到多重继承的目的。<br>在Java语言中，有些接口内部没有声明任何方法，也就是说，实现这些接口的类不需要，重写任何方法，这些没有任何方法声明的接口又被叫做标识接口，标识接口对实现它的类没有任何语义上的要求，它仅仅充当一个标识的作用，用来表明实现它的类属于一个特定的类型。这个标签类似于汽车的标志图标，每当人们看到一个汽车的标志图标时，就能知道这款汽车的品牌。Java类库中已存在的标识接口有Cloneable和Serializable等。在使用时会经常用instanceof来判断实例对象的类型是否实现了一个给定的标识接口。</p>
+<hr>
+<h2 id="10、Java中的clone方法有什么作用？（★）"><a href="#10、Java中的clone方法有什么作用？（★）" class="headerlink" title="10、Java中的clone方法有什么作用？（★）"></a>10、Java中的clone方法有什么作用？（★）</h2><p>由于指针不仅会给开发人员带来使用上的不便，而且也是造成程序不稳定的根源，为了消除C、C++ 语言的这些缺点，Java语言取消了指针的概念，但这只是在Java语言中没有明确提供指针的概念与用法，而实质上每个new语句返回的都是一个指针的引用，只不过在大部分情况下开发人员不需要关心如何去操作这个指针而已。<br>由于Java取消了指针的概念，因此开发人员在编程中往往忽略了对象和引用的区别。</p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
     <div id="comments">
     <!-- 来必力City版安装代码 -->
     <div id="lv-container" data-id="city" data-uid="MTAyMC81MDM3Ny8yNjg2Nw==">
@@ -417,6 +456,13 @@
 </div>
 
 
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -425,11 +471,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>
