@@ -6,17 +6,21 @@
   <meta name="keywords" content=" Java基本概念 ">
   <meta name="description" content="JavaBasicConcepts7-13 | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="7、一个Java文件中是否可以定义多个类？一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。8、什么是构造函数？构造函数是一种特殊的函数，用来在对象实例化时初始化对象的成员变量。在Java语">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaBasicConcepts7-13">
-<meta property="og:url" content="https://feng-ling.github.io/2021/04/09/JavaBasicConcepts7-13/index.html">
+<meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://feng-ling.github.io/about/index.html">
 <meta property="og:site_name" content="Feng-ling">
-<meta property="og:description" content="7、一个Java文件中是否可以定义多个类？一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。8、什么是构造函数？构造函数是一种特殊的函数，用来在对象实例化时初始化对象的成员变量。在Java语">
+<meta property="og:description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-09T12:58:40.000Z">
-<meta property="article:modified_time" content="2021-04-10T05:21:38.233Z">
+<meta property="article:published_time" content="2020-06-05T08:51:18.000Z">
+<meta property="article:modified_time" content="2020-06-05T08:51:18.497Z">
 <meta property="article:author" content="feng-ling">
-<meta property="article:tag" content="Java基本概念">
+<meta property="article:tag" content="study">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="DL">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="Recsys">
 <meta name="twitter:card" content="summary">
 
 
@@ -184,7 +188,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="5.7k">
+<input type="hidden" id="yelog_site_word_count" value="6.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -368,12 +372,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-04-10 13:21:38'>2021-04-09 20:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-04-14 10:52:48'>2021-04-09 20:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.3k</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -392,7 +396,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7、一个Java文件中是否可以定义多个类？"><span class="toc-text">7、一个Java文件中是否可以定义多个类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"><span class="toc-text">一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、什么是构造函数？"><span class="toc-text">8、什么是构造函数？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、为什么Java中有些接口没有任何方法？"><span class="toc-text">9、为什么Java中有些接口没有任何方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10、Java中的clone方法有什么作用？（★）"><span class="toc-text">10、Java中的clone方法有什么作用？（★）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7、一个Java文件中是否可以定义多个类？"><span class="toc-text">7、一个Java文件中是否可以定义多个类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、什么是构造函数？"><span class="toc-text">8、什么是构造函数？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、为什么Java中有些接口没有任何方法？"><span class="toc-text">9、为什么Java中有些接口没有任何方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10、Java中的clone方法有什么作用？（★）"><span class="toc-text">10、Java中的clone方法有什么作用？（★）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝VS浅拷贝"><span class="toc-text">深拷贝VS浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射机制"><span class="toc-text">反射机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是反射机制"><span class="toc-text">什么是反射机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射机制的优点与缺点"><span class="toc-text">反射机制的优点与缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射的应用场景"><span class="toc-text">反射的应用场景</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -408,11 +412,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="7、一个Java文件中是否可以定义多个类？"><a href="#7、一个Java文件中是否可以定义多个类？" class="headerlink" title="7、一个Java文件中是否可以定义多个类？"></a>7、一个Java文件中是否可以定义多个类？</h2><h2 id="一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"><a href="#一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。" class="headerlink" title="一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。"></a>一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。若文件中没有public类，则文件名是随便一个类的名字即可。javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。</h2><h2 id="8、什么是构造函数？"><a href="#8、什么是构造函数？" class="headerlink" title="8、什么是构造函数？"></a>8、什么是构造函数？</h2><p>构造函数是一种特殊的函数，用来在对象实例化时初始化对象的成员变量。在Java语言中，构造函数具有以下特点。<br>1)构造函数必须与类的名字相同，并且不能有返回值（返回值也不能为void)。<br>2)每个类可以有多个构造函数。当开发人员没有提供构造函数时，编译器在把源代码编成字节码的过程中会提供一个没有参数默认的构造函数，但该构造函数不会执行任何代码。如果开发人员提供了构造函数，那么编译器就不会再创建默认的构造函数了。<br>3)构造函数可以有0个、1个或1个以上的参数。<br>4)构造函数总是伴随着new操作一起调用，且不能由程序的编写者直接调用，必须要由系统调用。构造函数在对象实例化时会被自动调用，且只运行一次；而普通的方法是在程序执行到它时被调用，且可以被该对象调用多次。<br>5)构造函数的主要作用是完成对象的初始化工作。<br>6)构造函数不能被继承，因此，它不能被覆盖，但是构造函数能够被重载，可以使用不同的参数个数或参数类型来定义多个构造函数。<br>7)子类可以通过super关键字来显式地调用父类的构造函数，当父类没有提供无参数的构造函数时，子类的构造函数中必须显式地调用父类的构造函数。如果父类提供了无参数的构造函数，此时子类的构造函数就可以不显式地调用父类的构造函数，在这种情况下编译器会默认调用父类提供的无参数的构造函数。当有父类时，在实例化对象时会先执行父类的构造函数，然后执行子类的构造函数。<br>8)当父类和子类都没有定义构造函数时， 编译器会为父类生成一个默认的无参数的构造函数，给子类也生成一个默认的无参数的构造函数。此外，默认构造器的修饰符只跟当前类的修饰符有关（例如，一个类被定义为public, 那么它的构造函数也是public)。</p>
+        <h2 id="7、一个Java文件中是否可以定义多个类？"><a href="#7、一个Java文件中是否可以定义多个类？" class="headerlink" title="7、一个Java文件中是否可以定义多个类？"></a>7、一个Java文件中是否可以定义多个类？</h2><p>一个Java文件中可以定义多个类，但是最多只能有一个类被public修饰，并且这个类的名字必须和文件名相同。<br>若文件中没有public类，则文件名是随便一个类的名字即可。<br>javac指令编译Java文件时，为每一个类生成一个对应的class文件（包括匿名内部类）。</p>
+<hr>
+<h2 id="8、什么是构造函数？"><a href="#8、什么是构造函数？" class="headerlink" title="8、什么是构造函数？"></a>8、什么是构造函数？</h2><p>构造函数是一种特殊的函数，用来在对象实例化时初始化对象的成员变量。在Java语言中，构造函数具有以下特点。<br>1)构造函数必须与类的名字相同，并且不能有返回值（返回值也不能为void)。<br>2)每个类可以有多个构造函数。当开发人员没有提供构造函数时，编译器在把源代码编成字节码的过程中会提供一个没有参数默认的构造函数，但该构造函数不会执行任何代码。如果开发人员提供了构造函数，那么编译器就不会再创建默认的构造函数了。<br>3)构造函数可以有0个、1个或1个以上的参数。<br>4)构造函数总是伴随着new操作一起调用，且不能由程序的编写者直接调用，必须要由系统调用。构造函数在对象实例化时会被自动调用，且只运行一次；而普通的方法是在程序执行到它时被调用，且可以被该对象调用多次。<br>5)构造函数的主要作用是完成对象的初始化工作。<br>6)构造函数不能被继承，因此，它不能被覆盖，但是构造函数能够被重载，可以使用不同的参数个数或参数类型来定义多个构造函数。<br>7)子类可以通过super关键字来显式地调用父类的构造函数，当父类没有提供无参数的构造函数时，子类的构造函数中必须显式地调用父类的构造函数。如果父类提供了无参数的构造函数，此时子类的构造函数就可以不显式地调用父类的构造函数，在这种情况下编译器会默认调用父类提供的无参数的构造函数。当有父类时，在实例化对象时会先执行父类的构造函数，然后执行子类的构造函数。<br>8)当父类和子类都没有定义构造函数时， 编译器会为父类生成一个默认的无参数的构造函数，给子类也生成一个默认的无参数的构造函数。此外，默认构造器的修饰符只跟当前类的修饰符有关（例如，一个类被定义为public, 那么它的构造函数也是public)。</p>
 <hr>
 <h2 id="9、为什么Java中有些接口没有任何方法？"><a href="#9、为什么Java中有些接口没有任何方法？" class="headerlink" title="9、为什么Java中有些接口没有任何方法？"></a>9、为什么Java中有些接口没有任何方法？</h2><p>由于Java不支持多重继承，即一个类只能有一个父类，为了克服单继承的缺点，Java语言引人了接口这一概念。接口是抽象方法定义的集合（接口中也可以定义一些常量值），是一种特殊的抽象类。接口中只包含方法的定义，没有方法的实现。接口中的所有方法都是抽象的。接口中成员的作用域修饰符都是public，接口中的常量值默认使用public static final修饰。由于一个类可以实现多个接口，因此通常可以采用实现多个接口的方式来间接达到多重继承的目的。<br>在Java语言中，有些接口内部没有声明任何方法，也就是说，实现这些接口的类不需要，重写任何方法，这些没有任何方法声明的接口又被叫做标识接口，标识接口对实现它的类没有任何语义上的要求，它仅仅充当一个标识的作用，用来表明实现它的类属于一个特定的类型。这个标签类似于汽车的标志图标，每当人们看到一个汽车的标志图标时，就能知道这款汽车的品牌。Java类库中已存在的标识接口有Cloneable和Serializable等。在使用时会经常用instanceof来判断实例对象的类型是否实现了一个给定的标识接口。</p>
 <hr>
 <h2 id="10、Java中的clone方法有什么作用？（★）"><a href="#10、Java中的clone方法有什么作用？（★）" class="headerlink" title="10、Java中的clone方法有什么作用？（★）"></a>10、Java中的clone方法有什么作用？（★）</h2><p>由于指针不仅会给开发人员带来使用上的不便，而且也是造成程序不稳定的根源，为了消除C、C++ 语言的这些缺点，Java语言取消了指针的概念，但这只是在Java语言中没有明确提供指针的概念与用法，而实质上每个new语句返回的都是一个指针的引用，只不过在大部分情况下开发人员不需要关心如何去操作这个指针而已。<br>由于Java取消了指针的概念，因此开发人员在编程中往往忽略了对象和引用的区别。</p>
+<hr>
+<h2 id="深拷贝VS浅拷贝"><a href="#深拷贝VS浅拷贝" class="headerlink" title="深拷贝VS浅拷贝"></a>深拷贝VS浅拷贝</h2><p>1、浅拷贝：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。<br>2、深拷贝：对基本数据类型进行值传递，对引用数据类型，创建一个新的对象，并复制其内容，此为深拷贝。</p>
+<h2 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h2><h3 id="什么是反射机制"><a href="#什么是反射机制" class="headerlink" title="什么是反射机制"></a>什么是反射机制</h3><p>反射机制是Java中一项非常重要的特性，反射是指在运行时去获取一个类的变量和方法信息。然后通过获取到的信息来创建对象，调用方法的一种机制。</p>
+<h3 id="反射机制的优点与缺点"><a href="#反射机制的优点与缺点" class="headerlink" title="反射机制的优点与缺点"></a>反射机制的优点与缺点</h3><p>优点：由于反射的这种动态性，可以极大的增强程序的灵活性，程序不用在编译期就完成确定，在运行期仍然可以扩展；为各种框架提供开箱即用的功能提供了便利。<br>缺点：不恰当的使用反射机制，会严重影响系统性能；同时，让我们在运行时有了分析操作类的能力，这同样也增加了安全问题。比如可以无视泛型参数的安全检查（泛型参数的安全检查发生在编译时，暴力反射setAccessible(true)）.</p>
+<h3 id="反射的应用场景"><a href="#反射的应用场景" class="headerlink" title="反射的应用场景"></a>反射的应用场景</h3><p>像 Spring/Spring Boot、MyBatis 等等框架中都大量使用了反射机制，使得各种框架开箱即用。</p>
+<p>这些框架中也大量使用了动态代理，而动态代理的实现也依赖反射。</p>
+<p>另外，像 Java 中的一大利器 注解 的实现也用到了反射。<br>为什么你使用 Spring 的时候 ，一个@Component注解就声明了一个类为 Spring Bean 呢？为什么你通过一个 @Value注解就读取到配置文件中的值呢？究竟是怎么起作用的呢？<br>这些都是因为你可以基于反射分析类，然后获取到类/属性/方法/方法的参数上的注解。你获取到注解之后，就可以做进一步的处理。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
