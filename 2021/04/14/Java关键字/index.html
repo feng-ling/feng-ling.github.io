@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Deep Closest Point－Learning Representations for Point Cloud Registration | Feng-ling</title>
-  <meta name="keywords" content=" 点云配准 , 深度学习 ">
-  <meta name="description" content="Deep Closest Point－Learning Representations for Point Cloud Registration | Feng-ling">
+  <title>Java关键字 | Feng-ling</title>
+  <meta name="keywords" content=" Java关键字 ">
+  <meta name="description" content="Java关键字 | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:type" content="website">
@@ -405,9 +405,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-DCP" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Java关键字" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Deep Closest Point－Learning Representations for Point Cloud Registration</h1>
+        <h1 class="article-title">Java关键字</h1>
     
     <div class="article-meta">
         
@@ -417,7 +417,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="算法">算法</a>
+            <a  data-rel="Java关键字">Java关键字</a>
             
         </span>
         
@@ -425,21 +425,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">点云配准</a>
-            
-            <a class="color5">深度学习</a>
+            <a class="color3">Java关键字</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-11-01 20:23:58'>2020-10-30 21:38</time>
+            发布时间 : <time class="date" title='最后更新: 2021-04-14 20:02:54'>2021-04-14 14:15</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:974</span>
+        <span>字数:876</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -458,7 +456,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DCP：端到端地解决点云配准问题"><span class="toc-text">DCP：端到端地解决点云配准问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DGCNN：Dynamic-Graph-CNN"><span class="toc-text">DGCNN：Dynamic　Graph　CNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transformer"><span class="toc-text">Transformer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pointer"><span class="toc-text">Pointer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVD"><span class="toc-text">SVD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Experiments"><span class="toc-text">Experiments</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java跳出多重循环的三种办法"><span class="toc-text">Java跳出多重循环的三种办法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、利用标志变量"><span class="toc-text">1、利用标志变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、利用try…catch…"><span class="toc-text">2、利用try…catch…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、利用标签变量和break"><span class="toc-text">3、利用标签变量和break</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static关键字"><span class="toc-text">static关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch（expr）"><span class="toc-text">switch（expr）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile"><span class="toc-text">volatile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile有什么作用"><span class="toc-text">volatile有什么作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺点："><span class="toc-text">缺点：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -474,17 +472,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="DCP：端到端地解决点云配准问题"><a href="#DCP：端到端地解决点云配准问题" class="headerlink" title="DCP：端到端地解决点云配准问题"></a>DCP：端到端地解决点云配准问题</h2><p>DCP是2019年ICCV上发表地一篇文章，它是基于深度学习模拟ICP算法地流程，同时解决传统ICP配准算法的缺陷。经典的ICP点云配准算法，由于会收敛到欺骗性的局部最优。为了解决这样的问题，本文提出了一种基于特征学习的方法，命名为DCP（Deep　Closet　Point）。其中，深度神经网络部分只要用于学习出源、目标点云的一个靠谱的特征表示，后面得出的Pose还是用的SVD来求解的，比直接用MLP要合理的多，且最后的消融实验也证明这一点。DCP整个框架包含四个部分，分别是DGCNN，Transformer、Pointer以及SVD。<br><img src="/img/DCP.png" alt="DCP框架"></p>
-<hr>
-<h2 id="DGCNN：Dynamic-Graph-CNN"><a href="#DGCNN：Dynamic-Graph-CNN" class="headerlink" title="DGCNN：Dynamic　Graph　CNN"></a>DGCNN：Dynamic　Graph　CNN</h2><p>DGCNN也是本片篇论文的作者在2019年的发表在TOG（ACM Transactions on Graphics）上的一篇论文《Dynamic Graph CNN for Learning on Point Clouds》中提出来的，这篇论文的工作是基于PointNet的改进。PointNet是第一个在原始点云数据上直接学习的深度神经网络，但是它只关注全局特征而忽略了局部特征，因此，DGCNN采用动态图上实现CNN来改进这一缺陷，与GCN的思路十分一致，都是通过先聚合局部邻居的特征，通过几次聚合就可以学习到全局的特征，从而弥补了PointNet的缺点。其中，动态图的由来是因为点云上图的构建是通过KNN来实现的，但每次卷积之后图上节点的特征都会发生变化，因此需要用KNN重新生成一张图，因此就有了动态图的概念。<br><img src="/img/DGCNN.png" alt="DGCNN"><br>本片论文中使用DGCNN主要是用来分别对源点云与目标点云提取出特征矩阵，相当于是进行了一个特征学习。论文里面借用了NLP领域的概念，将为每个点云学出来的特征向量称为一个Embedding。</p>
-<hr>
-<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p>Transformer这个子网络结构来自于NLP领域的一个基于自注意力机制的模型，具体出处是在2017年的NIPS上发表的一篇<a href="https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf" target="_blank" rel="noopener">《Attention Is All You Need》</a>。谷歌发布的BERT模型里面就用到了这个网络。<br><img src="/img/transformer.png" alt="Transformer"><br>根据论文里面的解释，我觉得这一块儿使用Transformer这个网络是为了对DGCNN学出来的特征进行二次学习，使得源点云的特征中包含目标点云的特征，反之亦然。这样，我们的Transformer网络学出来的源点云与目标点云的特征会在很大程度上相似，因此对于我们所要进行的点云配准任务是更加有利的。</p>
-<hr>
-<h2 id="Pointer"><a href="#Pointer" class="headerlink" title="Pointer"></a>Pointer</h2><p>论文中DCP的第三部分是生成一个“Pointer”，我的理解是，这一块儿是利用上一步中生成的源、目标点云的特征矩阵来求两者之间对应的点对关系的，这里面采用了不同于ICP算法的“硬赋值”操作，它将为源点云中的每个点生成指向目标点云中每个点的概率，最后对进行加权求和就生成了源点云中每个点的对应点。<br>这一部分也算是本文里面的相对于传统ICP的一个创新点。</p>
-<hr>
-<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p>论文中DCP的最后一块儿是SVD层，模仿了ICP求解的过程，这个SVD层在Tensorflow和Pytorch中都有集成，可以在网络中直接使用。<br>使用SVD比直接用MLP直接给出Pose要合理，实验效果也好。</p>
-<hr>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p>本文做了很多的实验，表1、表2是测试模型的泛化性能。<br><img src="/img/DCP1.png" alt="Table 1"><br><img src="/img/DCP2.png" alt="Table 2"><br>表3测试了模型的鲁棒性，表4测试了时间效率。<br><img src="/img/DCP3.png" alt="Table 3"><br><img src="/img/DCP4.png" alt="Table 4"><br>表5、6、7都是消融实验，验证了模型各个子网络存在的必要性。<br><img src="/img/DCP5.png" alt="Table 5"><br><img src="/img/DCP6.png" alt="Table 6"></p>
+        <h2 id="Java跳出多重循环的三种办法"><a href="#Java跳出多重循环的三种办法" class="headerlink" title="Java跳出多重循环的三种办法"></a>Java跳出多重循环的三种办法</h2><h3 id="1、利用标志变量"><a href="#1、利用标志变量" class="headerlink" title="1、利用标志变量"></a>1、利用标志变量</h3><pre><code>public class Test1 {
+    public static boolean flag = true;   //标识变量
+    public static int i = 1;
+    public static int j = 1;
+
+    public static void main(String[] args) {
+        for (;i&lt;10;i++){
+            for(;j&lt;10;j++){
+                if(flag){
+                    break;
+                }
+            }
+            if(flag) {
+                break;
+            }
+        }
+        System.out.println(&quot;i=&quot;+i+&quot;     j=&quot;+j);
+    }
+}
+</code></pre><h3 id="2、利用try…catch…"><a href="#2、利用try…catch…" class="headerlink" title="2、利用try…catch…"></a>2、利用try…catch…</h3><pre><code class="Java">public class Test2 {
+    public static int i=1;
+    public static int j=1;
+    public static int max = 10;
+
+    public static void main(String[] args) {
+        try {
+            for (; i &lt; max; i++) {
+                for (; j &lt; max; j++) {
+                    throw new Exception(&quot;跳出循环&quot;);
+                }
+            }
+        } catch (Exception e) {
+
+        }
+        System.out.println(&quot;i=&quot;+i+&quot;     j=&quot;+j);
+    }
+}</code></pre>
+<h3 id="3、利用标签变量和break"><a href="#3、利用标签变量和break" class="headerlink" title="3、利用标签变量和break"></a>3、利用标签变量和break</h3><pre><code class="Java">public class Test3 {
+    public static int i = 1;
+    public static int j = 1;
+    public static int max = 10;
+
+    public static void main(String[] args) {
+        label: for (; i &lt; max; i++) {
+            for (; j &lt; max; j++) {
+                break label;
+            }
+        }
+        System.out.println(&quot;i=&quot; + i + &quot;     j=&quot; + j);
+    }
+}</code></pre>
+<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><p>（1）static 成员变量</p>
+<p>静态变量属于类，可以达到全局变量的效果，他在内存中只有一个复制，所有的实例都指向同一个内存地址。</p>
+<p>在Java语言中，不能在方法体中定义静态变量。</p>
+<p>（2）static成员方法</p>
+<p>static方法是类的方法，在其中不能使用this和super关键字（因为，可能静态方法被调用的时候，类的对象还没被创建），只能访问所属的类的静态成员方法和变量。</p>
+<p>static一个很重要的用提就是实现单例模式。单例模式的特点是该类只能有一个实例，因此我们将类的构造函数声明为private类型，同时将创建类的对象的方法和对象变量声明为static。</p>
+<p>（3）static代码块</p>
+<p>JVM在加载类的时候会优先执行static代码块，有多个的时候，依次执行。</p>
+<p>（4）static内部类</p>
+<p>同面向对象中的静态内部类。</p>
+<h2 id="switch（expr）"><a href="#switch（expr）" class="headerlink" title="switch（expr）"></a>switch（expr）</h2><p>在使用switch（expr）时，expr只能是一个枚举常量（内部由整型或者字符类型实现，enum xx{。。。}）或者一个整数表达式，整数表达式可以是byte、short、int、char类型以及他们对应的包装类类型。</p>
+<p>从Java7开始，switch开始支持String类型了。下面是具体解释：</p>
+<p>从本质上来讲，switch对字符串的支持，其实是int类型值的匹配。原理：通过case后面的String对象调用hashCode()方法，得到一个int类型的hash值，然后用着hash值来唯一标志这个case。当匹配的时候，调用expr的hashCode()函数，得到一个hash值，然后用这个值来匹配所有的case,如果没有匹配成功，则说明不存在；如果匹配成功，则调用字符串的String.equals()方法进行匹配。由此可以看出，switch。。。case字符串表达式不能为null。<br>至于为什么要调用String.equals()方法是因为，hashCode()返回值相等，他们的equals（）的返回值不一定相等。</p>
+<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><h3 id="volatile有什么作用"><a href="#volatile有什么作用" class="headerlink" title="volatile有什么作用"></a>volatile有什么作用</h3><p>（1）被volatile修饰的变量，系统每次用到它的时候都是直接从内存中提取而不是利用缓存（编译器自动对程序进行优化，对经常访问的变量缓存起来，但是会造成线程访问出现问题）；</p>
+<p>（2）在使用了volatile修饰成员变量后，所有线程在任何时候看到的变量都是相同的。</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>（1）volatile不能保证操作的原子性，所以一般不能用volatile代替sychronized；</p>
+<p>（2）使用volatile会组织编译器对代码进行优化，会降低程序的执行效率。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
