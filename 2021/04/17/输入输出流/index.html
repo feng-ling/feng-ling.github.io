@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Java面向对象 | Feng-ling</title>
-  <meta name="keywords" content=" Java面向对象 ">
-  <meta name="description" content="Java面向对象 | Feng-ling">
+  <title>输入输出流 | Feng-ling</title>
+  <meta name="keywords" content=" 字节流、字符流、序列化 ">
+  <meta name="description" content="输入输出流 | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:type" content="website">
@@ -465,9 +465,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Java面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-输入输出流" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Java面向对象</h1>
+        <h1 class="article-title">输入输出流</h1>
     
     <div class="article-meta">
         
@@ -477,7 +477,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Java面向对象">Java面向对象</a>
+            <a  data-rel="Java IO">Java IO</a>
             
         </span>
         
@@ -485,19 +485,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">Java面向对象</a>
+            <a class="color2">字节流、字符流、序列化</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-04-14 14:11:59'>2021-04-14 11:07</time>
+            发布时间 : <time class="date" title='最后更新: 2021-04-17 21:26:36'>2021-04-17 16:05</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:740</span>
+        <span>字数:2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -516,7 +516,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多态的实现机制"><span class="toc-text">多态的实现机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载与覆盖的区别"><span class="toc-text">重载与覆盖的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与接口有什么异同"><span class="toc-text">抽象类与接口有什么异同</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#相同点"><span class="toc-text">相同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同点"><span class="toc-text">不同点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类"><span class="toc-text">内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内部类有那些"><span class="toc-text">内部类有那些</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取父类的类名"><span class="toc-text">获取父类的类名</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-NIO"><span class="toc-text">Java NIO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Socket-是什么？"><span class="toc-text">Java Socket 是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是上下文切换？"><span class="toc-text">什么是上下文切换？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NIO是什么？"><span class="toc-text">NIO是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要引入NIO"><span class="toc-text">为什么要引入NIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NIO的实现原理（理解）"><span class="toc-text">NIO的实现原理（理解）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NIO的优点"><span class="toc-text">NIO的优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java序列化"><span class="toc-text">Java序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）序列化"><span class="toc-text">（1）序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部序列化"><span class="toc-text">外部序列化</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -532,27 +532,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="多态的实现机制"><a href="#多态的实现机制" class="headerlink" title="多态的实现机制"></a>多态的实现机制</h2><p>Java中提供了两种用于多态的机制，分别是编译时多态和运行时多态。编译时多态是通过方法的重载实现的，运行时多态是通过方法的覆盖（子类重写父类的方法）实现的。</p>
-<h2 id="重载与覆盖的区别"><a href="#重载与覆盖的区别" class="headerlink" title="重载与覆盖的区别"></a>重载与覆盖的区别</h2><p>1.定义区别：</p>
-<p>①重载是指不同的函数使用相同的函数名，但是函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。</p>
-<p>②覆盖（也叫重写）是指在派生类中重新对基类中的虚函数（注意是虚函数）重新实现。即函数名和参数都一样，只是函数的实现体不一样。</p>
-<p>2.类的关系区别</p>
-<p>覆盖是子类和父类之间的关系，是垂直关系；重载是同一个类中方法之间的关系，是水平关系。</p>
-<p>3.产生方法区别</p>
-<p>覆盖只能由一个方法或只能由一对方法产生关系；重载是多个方法之间的关系。</p>
-<p>4.参数列表要求区别</p>
-<p>覆盖要求参数列表相同；重载要求参数列表不同。</p>
-<p>5.调用方法区别</p>
-<p>覆盖关系中，调用方法体是根据对象的类型来决定；而重载关系是根据调用时的实参表与形参表来选择方法体的</p>
-<h2 id="抽象类与接口有什么异同"><a href="#抽象类与接口有什么异同" class="headerlink" title="抽象类与接口有什么异同"></a>抽象类与接口有什么异同</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><p>1、这两者都不能直接被实例化；<br>2、接口的实现类或者抽象类的子类都只有实现了接口或者抽象类中的抽象方法才能被实例化。</p>
-<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><p>1、成员区别</p>
-<p>抽象类：<br>变量,常量；有构造方法；有抽象方法,也有非抽象方法<br>接口：<br>常量；抽象方法</p>
-<p>2、关系区别</p>
-<p>类与类：<br>继承，单继承<br>类与接口：<br>实现，可以单实现，也可以多实现<br>接口与接口：<br>继承，单继承，多继承</p>
-<p>3、设计理念区别</p>
-<p>抽象类：<br>对类抽象，包括属性、行为<br>接口：<br>对行为抽象，主要是行为</p>
-<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><h3 id="内部类有那些"><a href="#内部类有那些" class="headerlink" title="内部类有那些"></a>内部类有那些</h3><p>内部类主要有四种：<br>静态内部类（类被static修饰，可以不依赖外部类的实例化而实例化，只能访问外部类的静态成员变量和方法）、<br>成员内部类（普通的内部类，定义在类的成员位置上，可以自由引用外部类的属性和方法，但是不可以定义静态的属性和方法）、<br>局部内部类（定义在类的成员方法内，不能被private、public、protect、static修饰，只能访问方法中被final修饰的局部变量）、<br>匿名内部类（直接new构造，必须继承其他类或者实现其他接口）。</p>
-<h2 id="获取父类的类名"><a href="#获取父类的类名" class="headerlink" title="获取父类的类名"></a>获取父类的类名</h2><p>通过Java的反射机制，使用getClass().getSuperClass().getName()</p>
+        <h2 id="Java-NIO"><a href="#Java-NIO" class="headerlink" title="Java NIO"></a>Java NIO</h2><h2 id="Java-Socket-是什么？"><a href="#Java-Socket-是什么？" class="headerlink" title="Java Socket 是什么？"></a>Java Socket 是什么？</h2><p>网络上的两个程序通过一个双向的通信连接实现数据的交换，这个双向链路的一端称为一个Socket。Socket也称为套接字，可以用来实现不同计算机之间的通信。</p>
+<p>Socket分为两种类型：</p>
+<p>（1）面向无连接的Socket通信协议（UDP，用户数据报协议）</p>
+<p>（2）面向连接的Socket通信协议（TCP，传输控制协议）</p>
+<p>任何一个Socket都是由IP地址和端口号唯一确定的。</p>
+<h2 id="什么是上下文切换？"><a href="#什么是上下文切换？" class="headerlink" title="什么是上下文切换？"></a>什么是上下文切换？</h2><p>多任务系统往往需要同时执行多道作业。作业数往往大于机器的CPU数, 然而一颗CPU同时只能执行一项任务, 如何让用户感觉这些任务正在同时进行呢? 操作系统的设计者巧妙地利用了时间片轮转的方式, CPU给每个任务都服务一定的时间, 然后把当前任务的状态保存下来, 在加载下一任务的状态后, 继续服务下一任务。 任务的状态保存及再加载, 这段过程就叫做上下文切换。 时间片轮转的方式使多个任务在同一颗CPU上执行变成了可能, 但同时也带来了保存现场和加载现场的直接消耗。</p>
+<h3 id="NIO是什么？"><a href="#NIO是什么？" class="headerlink" title="NIO是什么？"></a>NIO是什么？</h3><p>NIO是非阻塞IO(Nonblocking IO, NIO)， 是一种同步非阻塞的I/O模型，在Java 1.4中引入了NIO 框架，对应java.nio包，提供了Channel,Selector，Buffer等抽象。NIO中的 N可以理解为 Non-blocking，不单纯是 New。它支持面向缓冲的，基于通道的I/O操作方法。</p>
+<h3 id="为什么要引入NIO"><a href="#为什么要引入NIO" class="headerlink" title="为什么要引入NIO"></a>为什么要引入NIO</h3><p>在NIO出现之前，Java是通过传统的Socket来实现基本的网络通信功能的。以服务器端为例，其实现基本流程是：</p>
+<p>（1）open, 打开ServerSocket连接<br>（2）accept, 接受连接<br>（3）read, 读取数据<br>（4）seldf: 发送数据<br>（5）close, 关闭连接</p>
+<p>如果客户端还没有对服务器端发起连接请求，那么accept就会阻塞（阻塞指的是暂停一个线程的执行以等待某个条件发生，例如某资源就绪）。如果连接成功，当数据还没有准备好时，对read的调用同样会阻塞。当要处理多个连接时，就需要采用多线程的方式，由千每个线程都拥有自己的栈空间，而且由千阻塞会导致大最线程进行上下文切换，使得程序的运行效率非常低下，因此在J2SE l.4中引入了NIO来解决这个问题。</p>
+<h3 id="NIO的实现原理（理解）"><a href="#NIO的实现原理（理解）" class="headerlink" title="NIO的实现原理（理解）"></a>NIO的实现原理（理解）</h3><p>NIO通过Selector、Channe1和Buffer来实现非阻塞的IO操作，其原理如下图所示：</p>
+<p><img src="/img/NIO.png" alt="NIO实现原理图"></p>
+<p>（1）在上图中，Channel可以被看作一个双向的非阻塞的通道，在通道的两边都可以进行数据的读写操作。 </p>
+<p>（2）Selector实现了用一个线程来管理多个通道（采用了复用与解复用的方式使得一个线程能够管理多个通道， 即可以把多个流合并成为一个流， 或者把一个流分成多个流的方式），它类似于一个观察者。</p>
+<pre><code> 在实现时，（线程）把需要处理的Channel的IO事件（例如 connect、read或 write等）注册给Selector。 
+
+ Selector内部的实现原理为：对所有注册的Channel进行轮询访问，一旦轮询到一个Channel有注册的事件发生，
+ 例如有数据来了，它就通过传回SelectionKey的方式来通知开发人员对Channel进行数据的读或写操作。
+ 其中，SelectionKey封装了一个特定Channe1和一个特定的selector之间的关系。
+
+ 这种通过轮询的方式在处理多线程请求时不需要上下文的切换，而采用多线程的实现方式在线程之间切换时需要上下文的切换， 
+ 同时也需要进行压栈与弹栈操作。因此，NIO 有较高的执行效率。</code></pre><p>（3）Buffer用来保存数据，可以用来存放从Channel取的数据，也可以存放使用Channel进行发送的数据。Java提供了多种不同类型的Buffer,例如ByteBuffer、CharBuffer等，通过Buffer,大大简化了开发人员对流数据的管理。</p>
+<h3 id="NIO的优点"><a href="#NIO的优点" class="headerlink" title="NIO的优点"></a>NIO的优点</h3><p>NIO 在网络编程中有着非常重要的作用，与传统的 Socket方式相比， 由于NIO采用了非阻塞的方式，在处理大量并发请求时，使用NIO要比使用Socket效率高出很多。</p>
+<h2 id="Java序列化"><a href="#Java序列化" class="headerlink" title="Java序列化"></a>Java序列化</h2><p>Java提供了两种对象持久化的方式，分别为序列化和外部序列化，其中，所谓的对象持久化就是将对象存储在磁盘或者文件中。</p>
+<h3 id="（1）序列化"><a href="#（1）序列化" class="headerlink" title="（1）序列化"></a>（1）序列化</h3><p>1）在分布式环境下，当进行远程通信时，无论是何种类型的数据，都会以二进制序列的形式在网络上传送。</p>
+<pre><code>   序列化是一种将对象以一个字节序列来表示的机制，用于解决对象流在进行读写操作时所引发的问题。
+   序列化可以将对象的状态（对象的类型、对象的数据和对象中存储的属性等信息）写在流里进行网络传输，或者保存到文件、数据库等系统里，
+   并在需要时把该流读取出来重新构造一个相同的对象。</code></pre><p>2）序列化有两个特点</p>
+<pre><code>   l)如果一个类能被序列化，那么它的子类也能够被序列化。
+   2)由于static(静态）代表类的成员，transient代表对象的临时数据，因此被声明为这两种类型的数据成员是不能够被序列化的。</code></pre><p>3）反序列化</p>
+<p>序列化相对的是反序列化，它将流转换为对象。在序列化与反序列化的过程中，serialVersionUID 起着非常重要的作用，每个类都有一个特定的 serialVersionUID, 在反序列化的过程中，通过serialVersionUID来判定类的兼容性。<br>如果待序列化的对象与目标对象的serialVersionUID 不同，那么在反序列化时就会抛出 InvalidClassException异常。作为一个好的编程习惯，最好在被序列化的类中显式地声明serialVersionUID(该字段必须定义为static final)。 </p>
+<p>自定义 seri­alVersionUID 主要有如下 3 个优点:</p>
+<pre><code>1) 提高程序的运行效率。如果在类中未显式声明 serialVersionUID ,那么在序列化时会通过计算得到一个serialVersionUID值。 
+   通过显式声明 serialVersion UID 的方式省去了计算的过程，因此提高了程序的运行效率。
+
+2) 提高程序不同平台上的兼容性。由于各个平台的编译器在计算 serialVersionUID 时完全
+   有可能会采用不同的计算方式，这就会导致在一个平台上序列化的对象在另外一个平台上将无
+   法实现反序列化的操作。通过显式声明 serialVersion UID 的方法完全可以避免该问题的发生。
+
+3) 增强程序各个版本的可兼容性。在默认情况下，每个类都有唯一的serialVersionUID,
+   因此，当后期对类进行修改时（例如加入新的属性），类的serialVersionUID值将会发生变化，
+   这将会导致类在修改前对象序列化的文件在修改后无法进行反序列化操作。</code></pre><h3 id="外部序列化"><a href="#外部序列化" class="headerlink" title="外部序列化"></a>外部序列化</h3><p>外部序列化与序列化主要的区别在于序列化是内置的API, 只需要实现Serializable接口，开发人员不需要编写任何代码就可以实现对象的序列化，而使用外部序列化时，Externalizable接口中的读写方法必须由开发人员来实现。因此与实现Serializable接口的方法相比，使用Externalizable编写程序的难度更大，但是由于把控制权交给了开发人员，在编程时有更多的灵活性，对需要持久化的那些属性可以进行控制，可能会提高性能 。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
