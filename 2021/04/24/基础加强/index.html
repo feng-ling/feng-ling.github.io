@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>基础加强 | Feng-ling</title>
+  <meta name="keywords" content=" Junit、反射、注解 ">
+  <meta name="description" content="基础加强 | Feng-ling">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://feng-ling.github.io/about/index.html">
+<meta property="og:site_name" content="Feng-ling">
+<meta property="og:description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-05T08:51:18.000Z">
+<meta property="article:modified_time" content="2020-06-05T08:51:18.497Z">
+<meta property="article:author" content="feng-ling">
+<meta property="article:tag" content="study">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="DL">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="Recsys">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/timg.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+</div>
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/timg.jpg" />
+</a>
+<div class="author">
+    <span>feng-ling</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/feng-ling" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/6087302136" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/mr-shen-92" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:2503792903@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2503792903&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(17)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基础知识">Java基础知识<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="多线程">多线程<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="容器">容器<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="异常处理">异常处理<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java IO">Java IO<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java测试">Java测试<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java关键字">Java关键字<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基本类型">Java基本类型<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java面向对象">Java面向对象<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java内存">Java内存<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java字符串与数组">Java字符串与数组<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="22.7k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>点云配准</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>多线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>平台、内存、JVM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>深度学习</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异常处理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>字节流、字符流、序列化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Character、Array、<?></a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java关键字</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本概念</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本类型与运算</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java面向对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Junit、反射、注解</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>List、Set、Map</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Point Cloud Registration</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 Java测试 "
+           href="/2021/04/24/%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA/"
+           data-tag="Junit、反射、注解"
+           data-author="" >
+            <span class="post-title" title="基础加强">基础加强</span>
+            <span class="post-date" title="2021-04-24 14:13:01">2021/04/24</span>
+        </a>
+        
+        <a  class="全部文章 多线程 "
+           href="/2021/04/21/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="多线程">多线程</span>
+            <span class="post-date" title="2021-04-21 18:27:47">2021/04/21</span>
+        </a>
+        
+        <a  class="全部文章 容器 "
+           href="/2021/04/20/%E5%AE%B9%E5%99%A8/"
+           data-tag="List、Set、Map"
+           data-author="" >
+            <span class="post-title" title="容器">容器</span>
+            <span class="post-date" title="2021-04-20 13:54:36">2021/04/20</span>
+        </a>
+        
+        <a  class="全部文章 Java内存 "
+           href="/2021/04/19/Java%E5%B9%B3%E5%8F%B0%E4%BA%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"
+           data-tag="平台、内存、JVM"
+           data-author="" >
+            <span class="post-title" title="Java平台与内存管理">Java平台与内存管理</span>
+            <span class="post-date" title="2021-04-19 15:04:04">2021/04/19</span>
+        </a>
+        
+        <a  class="全部文章 Java IO "
+           href="/2021/04/17/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/"
+           data-tag="字节流、字符流、序列化"
+           data-author="" >
+            <span class="post-title" title="输入输出流">输入输出流</span>
+            <span class="post-date" title="2021-04-17 16:05:29">2021/04/17</span>
+        </a>
+        
+        <a  class="全部文章 异常处理 "
+           href="/2021/04/16/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"
+           data-tag="异常处理"
+           data-author="" >
+            <span class="post-title" title="异常处理">异常处理</span>
+            <span class="post-date" title="2021-04-16 17:07:29">2021/04/16</span>
+        </a>
+        
+        <a  class="全部文章 Java字符串与数组 "
+           href="/2021/04/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84/"
+           data-tag="Character、Array、&lt;?&gt;"
+           data-author="" >
+            <span class="post-title" title="字符串&amp;数组&amp;泛型">字符串&amp;数组&amp;泛型</span>
+            <span class="post-date" title="2021-04-15 21:07:26">2021/04/15</span>
+        </a>
+        
+        <a  class="全部文章 Java基本类型 "
+           href="/2021/04/14/Java%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97/"
+           data-tag="Java基本类型与运算"
+           data-author="" >
+            <span class="post-title" title="Java基本类型与运算">Java基本类型与运算</span>
+            <span class="post-date" title="2021-04-14 20:04:40">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java关键字 "
+           href="/2021/04/14/Java%E5%85%B3%E9%94%AE%E5%AD%97/"
+           data-tag="Java关键字"
+           data-author="" >
+            <span class="post-title" title="Java关键字">Java关键字</span>
+            <span class="post-date" title="2021-04-14 14:15:18">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java面向对象 "
+           href="/2021/04/14/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="Java面向对象"
+           data-author="" >
+            <span class="post-title" title="Java面向对象">Java面向对象</span>
+            <span class="post-date" title="2021-04-14 11:07:07">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts7-13/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts7-13">JavaBasicConcepts7-13</span>
+            <span class="post-date" title="2021-04-09 20:58:40">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts1-6/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts1-6">JavaBasicConcepts1-6</span>
+            <span class="post-date" title="2021-04-09 17:30:33">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/DCP/"
+           data-tag="点云配准,深度学习"
+           data-author="" >
+            <span class="post-title" title="Deep Closest Point－Learning Representations for Point Cloud Registration">Deep Closest Point－Learning Representations for Point Cloud Registration</span>
+            <span class="post-date" title="2020-10-30 21:38:25">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/Registration/"
+           data-tag="Point Cloud Registration"
+           data-author="" >
+            <span class="post-title" title="点云配准概述">点云配准概述</span>
+            <span class="post-date" title="2020-10-30 14:36:46">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/ICP/"
+           data-tag="ML,算法"
+           data-author="" >
+            <span class="post-title" title="ICP算法的SVD求解">ICP算法的SVD求解</span>
+            <span class="post-date" title="2020-10-30 14:02:12">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/06/05/Test/"
+           data-tag="hexo,3-hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo使用说明">Hexo使用说明</span>
+            <span class="post-date" title="2020-06-05 15:02:57">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2020/06/05/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-06-05 14:54:13">2020/06/05</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-基础加强" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">基础加强</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Java测试">Java测试</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Junit、反射、注解</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-04-24 19:22:34'>2021-04-24 14:13</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#今日内容"><span class="toc-text">今日内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit单元测试："><span class="toc-text">Junit单元测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射：框架设计的灵魂"><span class="toc-text">反射：框架设计的灵魂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解："><span class="toc-text">注解：</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. Junit单元测试
+2. 反射
+3. 注解</code></pre><h2 id="Junit单元测试："><a href="#Junit单元测试：" class="headerlink" title="Junit单元测试："></a>Junit单元测试：</h2><p><img src="/img/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB.bmp" alt=""><br>    * 测试分类：<br>        1. 黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。<br>        2. 白盒测试：需要写代码的。关注程序具体的执行流程。</p>
+<pre><code>* Junit使用：白盒测试
+    * 步骤：
+        1. 定义一个测试类(测试用例)
+            * 建议：
+                * 测试类名：被测试的类名Test        CalculatorTest
+                * 包名：xxx.xxx.xx.test        cn.itcast.test
+
+        2. 定义测试方法：可以独立运行
+            * 建议：
+                * 方法名：test测试的方法名        testAdd()  
+                * 返回值：void
+                * 参数列表：空参
+
+        3. 给方法加@Test
+        4. 导入junit依赖环境
+
+    * 判定结果：
+        * 红色：失败
+        * 绿色：成功
+        * 一般我们会使用断言操作来处理结果
+            * Assert.assertEquals(期望的结果,运算的结果);
+
+    * 补充：
+        * @Before:
+            * 修饰的方法会在测试方法之前被自动执行
+        * @After:
+            * 修饰的方法会在测试方法执行之后自动被执行</code></pre><h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><p><img src="/img/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp" alt=""><br>    * 框架：半成品软件。可以在框架的基础上进行软件开发，简化编码<br>    * 反射：将类的各个组成部分封装为其他对象，这就是反射机制<br>        * 好处：<br>            1. 可以在程序运行过程中，操作这些对象。<br>            2. 可以解耦，提高程序的可扩展性。</p>
+<pre><code>* 获取Class对象的方式：
+    1. Class.forName(&quot;全类名&quot;)：将字节码文件加载进内存，返回Class对象
+        * 多用于配置文件，将类名定义在配置文件中。读取文件，加载类
+    2. 类名.class：通过类名的属性class获取
+        * 多用于参数的传递
+    3. 对象.getClass()：getClass()方法在Object类中定义着。
+        * 多用于对象的获取字节码的方式
+
+    * 结论：
+        同一个字节码文件(*.class)在一次程序运行过程中，只会被加载一次，不论通过哪一种方式获取的Class对象都是同一个。
+
+
+* Class对象功能：
+    * 获取功能：
+        1. 获取成员变量们
+            * Field[] getFields() ：获取所有public修饰的成员变量
+            * Field getField(String name)   获取指定名称的 public修饰的成员变量
+
+            * Field[] getDeclaredFields()  获取所有的成员变量，不考虑修饰符
+            * Field getDeclaredField(String name)  
+        2. 获取构造方法们
+            * Constructor&lt;?&gt;[] getConstructors()  
+            * Constructor&lt;T&gt; getConstructor(类&lt;?&gt;... parameterTypes)  
+
+            * Constructor&lt;T&gt; getDeclaredConstructor(类&lt;?&gt;... parameterTypes)  
+            * Constructor&lt;?&gt;[] getDeclaredConstructors()  
+        3. 获取成员方法们：
+            * Method[] getMethods()  
+            * Method getMethod(String name, 类&lt;?&gt;... parameterTypes)  
+
+            * Method[] getDeclaredMethods()  
+            * Method getDeclaredMethod(String name, 类&lt;?&gt;... parameterTypes)  
+
+        4. 获取全类名    
+            * String getName()  
+
+
+* Field：成员变量
+    * 操作：
+        1. 设置值
+            * void set(Object obj, Object value)  
+        2. 获取值
+            * get(Object obj) 
+
+        3. 忽略访问权限修饰符的安全检查
+            * setAccessible(true):暴力反射
+
+
+
+* Constructor:构造方法
+    * 创建对象：
+        * T newInstance(Object... initargs)  
+
+        * 如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法
+
+
+* Method：方法对象
+    * 执行方法：
+        * Object invoke(Object obj, Object... args)  
+
+    * 获取方法名称：
+        * String getName:获取方法名
+
+
+* 案例：
+    * 需求：写一个&quot;框架&quot;，不能改变该类的任何代码的前提下，可以帮我们创建任意类的对象，并且执行其中任意方法
+        * 实现：
+            1. 配置文件
+            2. 反射
+        * 步骤：
+            1. 将需要创建的对象的全类名和需要执行的方法定义在配置文件中
+            2. 在程序中加载读取配置文件
+            3. 使用反射技术来加载类文件进内存
+            4. 创建对象
+            5. 执行方法</code></pre><h2 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h2><p><img src="/img/%E6%B3%A8%E8%A7%A3%E8%A7%A3%E6%9E%90%E5%9B%BE.jpg" alt=""><br>    * 概念：说明程序的。给计算机看的<br>    * 注释：用文字描述程序的。给程序员看的</p>
+<pre><code>* 定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。
+* 概念描述：
+    * JDK1.5之后的新特性
+    * 说明程序的
+    * 使用注解：@注解名称
+
+
+* 作用分类：
+    ①编写文档：通过代码里标识的注解生成文档【生成文档doc文档】
+    ②代码分析：通过代码里标识的注解对代码进行分析【使用反射】
+    ③编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Override】
+
+
+* JDK中预定义的一些注解
+    * @Override    ：检测被该注解标注的方法是否是继承自父类(接口)的
+    * @Deprecated：该注解标注的内容，表示已过时
+    * @SuppressWarnings：压制警告
+        * 一般传递参数all  @SuppressWarnings(&quot;all&quot;)
+
+* 自定义注解
+    * 格式：
+        元注解
+        public @interface 注解名称{
+            属性列表;
+        }
+
+    * 本质：注解本质上就是一个接口，该接口默认继承Annotation接口
+        * public interface MyAnno extends java.lang.annotation.Annotation {}
+
+    * 属性：接口中的抽象方法
+        * 要求：
+            1. 属性的返回值类型有下列取值
+                * 基本数据类型
+                * String
+                * 枚举
+                * 注解
+                * 以上类型的数组
+
+            2. 定义了属性，在使用时需要给属性赋值
+                1. 如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值。
+                2. 如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可。
+                3. 数组赋值时，值使用{}包裹。如果数组中只有一个值，则{}可以省略
+
+    * 元注解：用于描述注解的注解
+        * @Target：描述注解能够作用的位置
+            * ElementType取值：
+                * TYPE：可以作用于类上
+                * METHOD：可以作用于方法上
+                * FIELD：可以作用于成员变量上
+        * @Retention：描述注解被保留的阶段
+            * @Retention(RetentionPolicy.RUNTIME)：当前被描述的注解，会保留到class字节码文件中，并被JVM读取到
+        * @Documented：描述注解是否被抽取到api文档中
+        * @Inherited：描述注解是否被子类继承
+
+
+* 在程序使用(解析)注解：获取注解中定义的属性值
+    1. 获取注解定义的位置的对象  （Class，Method,Field）
+    2. 获取指定的注解
+        * getAnnotation(Class)
+        //其实就是在内存中生成了一个该注解接口的子类实现对象
+
+                public class ProImpl implements Pro{
+                    public String className(){
+                        return &quot;cn.itcast.annotation.Demo1&quot;;
+                    }
+                    public String methodName(){
+                        return &quot;show&quot;;
+                    }
+                }
+    3. 调用注解中的抽象方法获取配置的属性值
+
+
+* 案例：简单的测试框架
+* 小结：
+    1. 以后大多数时候，我们会使用注解，而不是自定义注解
+    2. 注解给谁用？
+        1. 编译器
+        2. 给解析程序用
+    3. 注解不是程序的一部分，可以理解为注解就是一个标签</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDM3Ny8yNjg2Nw==">
+        <script type="text/javascript">
+			(function(d, s) {
+				var j, e = d.getElementsByTagName(s)[0];
+
+				if (typeof LivereTower === 'function') { return; }
+
+				j = d.createElement(s);
+				window.livereOptions = {
+					eagerLoading: true,
+					scrollEventTargetSelector: '#post'
+                }
+				j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				j.async = true;
+				e.parentNode.insertBefore(j, e);
+			})(document, 'script');
+        </script>
+        <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2020 feng-ling
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

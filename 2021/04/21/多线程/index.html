@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>多线程 | Feng-ling</title>
+  <meta name="keywords" content=" 多线程 ">
+  <meta name="description" content="多线程 | Feng-ling">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://feng-ling.github.io/about/index.html">
+<meta property="og:site_name" content="Feng-ling">
+<meta property="og:description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-05T08:51:18.000Z">
+<meta property="article:modified_time" content="2020-06-05T08:51:18.497Z">
+<meta property="article:author" content="feng-ling">
+<meta property="article:tag" content="study">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="DL">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="Recsys">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/timg.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+</div>
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/timg.jpg" />
+</a>
+<div class="author">
+    <span>feng-ling</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/feng-ling" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/6087302136" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/mr-shen-92" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:2503792903@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2503792903&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(17)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基础知识">Java基础知识<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="多线程">多线程<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="容器">容器<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="异常处理">异常处理<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java IO">Java IO<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java测试">Java测试<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java关键字">Java关键字<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基本类型">Java基本类型<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java面向对象">Java面向对象<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java内存">Java内存<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java字符串与数组">Java字符串与数组<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="22.7k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>点云配准</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>多线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>平台、内存、JVM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>深度学习</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异常处理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>字节流、字符流、序列化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Character、Array、<?></a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java关键字</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本概念</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本类型与运算</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java面向对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Junit、反射、注解</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>List、Set、Map</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Point Cloud Registration</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 Java测试 "
+           href="/2021/04/24/%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA/"
+           data-tag="Junit、反射、注解"
+           data-author="" >
+            <span class="post-title" title="基础加强">基础加强</span>
+            <span class="post-date" title="2021-04-24 14:13:01">2021/04/24</span>
+        </a>
+        
+        <a  class="全部文章 多线程 "
+           href="/2021/04/21/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="多线程">多线程</span>
+            <span class="post-date" title="2021-04-21 18:27:47">2021/04/21</span>
+        </a>
+        
+        <a  class="全部文章 容器 "
+           href="/2021/04/20/%E5%AE%B9%E5%99%A8/"
+           data-tag="List、Set、Map"
+           data-author="" >
+            <span class="post-title" title="容器">容器</span>
+            <span class="post-date" title="2021-04-20 13:54:36">2021/04/20</span>
+        </a>
+        
+        <a  class="全部文章 Java内存 "
+           href="/2021/04/19/Java%E5%B9%B3%E5%8F%B0%E4%BA%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"
+           data-tag="平台、内存、JVM"
+           data-author="" >
+            <span class="post-title" title="Java平台与内存管理">Java平台与内存管理</span>
+            <span class="post-date" title="2021-04-19 15:04:04">2021/04/19</span>
+        </a>
+        
+        <a  class="全部文章 Java IO "
+           href="/2021/04/17/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/"
+           data-tag="字节流、字符流、序列化"
+           data-author="" >
+            <span class="post-title" title="输入输出流">输入输出流</span>
+            <span class="post-date" title="2021-04-17 16:05:29">2021/04/17</span>
+        </a>
+        
+        <a  class="全部文章 异常处理 "
+           href="/2021/04/16/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"
+           data-tag="异常处理"
+           data-author="" >
+            <span class="post-title" title="异常处理">异常处理</span>
+            <span class="post-date" title="2021-04-16 17:07:29">2021/04/16</span>
+        </a>
+        
+        <a  class="全部文章 Java字符串与数组 "
+           href="/2021/04/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84/"
+           data-tag="Character、Array、&lt;?&gt;"
+           data-author="" >
+            <span class="post-title" title="字符串&amp;数组&amp;泛型">字符串&amp;数组&amp;泛型</span>
+            <span class="post-date" title="2021-04-15 21:07:26">2021/04/15</span>
+        </a>
+        
+        <a  class="全部文章 Java基本类型 "
+           href="/2021/04/14/Java%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97/"
+           data-tag="Java基本类型与运算"
+           data-author="" >
+            <span class="post-title" title="Java基本类型与运算">Java基本类型与运算</span>
+            <span class="post-date" title="2021-04-14 20:04:40">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java关键字 "
+           href="/2021/04/14/Java%E5%85%B3%E9%94%AE%E5%AD%97/"
+           data-tag="Java关键字"
+           data-author="" >
+            <span class="post-title" title="Java关键字">Java关键字</span>
+            <span class="post-date" title="2021-04-14 14:15:18">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java面向对象 "
+           href="/2021/04/14/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="Java面向对象"
+           data-author="" >
+            <span class="post-title" title="Java面向对象">Java面向对象</span>
+            <span class="post-date" title="2021-04-14 11:07:07">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts7-13/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts7-13">JavaBasicConcepts7-13</span>
+            <span class="post-date" title="2021-04-09 20:58:40">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts1-6/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts1-6">JavaBasicConcepts1-6</span>
+            <span class="post-date" title="2021-04-09 17:30:33">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/DCP/"
+           data-tag="点云配准,深度学习"
+           data-author="" >
+            <span class="post-title" title="Deep Closest Point－Learning Representations for Point Cloud Registration">Deep Closest Point－Learning Representations for Point Cloud Registration</span>
+            <span class="post-date" title="2020-10-30 21:38:25">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/Registration/"
+           data-tag="Point Cloud Registration"
+           data-author="" >
+            <span class="post-title" title="点云配准概述">点云配准概述</span>
+            <span class="post-date" title="2020-10-30 14:36:46">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/ICP/"
+           data-tag="ML,算法"
+           data-author="" >
+            <span class="post-title" title="ICP算法的SVD求解">ICP算法的SVD求解</span>
+            <span class="post-date" title="2020-10-30 14:02:12">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/06/05/Test/"
+           data-tag="hexo,3-hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo使用说明">Hexo使用说明</span>
+            <span class="post-date" title="2020-06-05 15:02:57">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2020/06/05/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-06-05 14:54:13">2020/06/05</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-多线程" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">多线程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="多线程">多线程</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">多线程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-04-23 20:20:41'>2021-04-21 18:27</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简述线程、程序、进程的基本概念。以及他们之间关系是什么"><span class="toc-text">简述线程、程序、进程的基本概念。以及他们之间关系是什么?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程的关系"><span class="toc-text">进程与线程的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序、进程、线程之间的关系？"><span class="toc-text">程序、进程、线程之间的关系？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程有哪些基本状态"><span class="toc-text">线程有哪些基本状态?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java如何实现多线程？"><span class="toc-text">Java如何实现多线程？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q：一个类是否可以同时继承Thread与实现-Runnable-接口？"><span class="toc-text">Q：一个类是否可以同时继承Thread与实现 Runnable 接口？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#run-方法与start-方法的区别？"><span class="toc-text">run()方法与start()方法的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程同步的实现方法有那些"><span class="toc-text">多线程同步的实现方法有那些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sleep（）方法和wait（）方法的区别"><span class="toc-text">sleep（）方法和wait（）方法的区别?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-sleep-方法与yield-方法有什么区别？"><span class="toc-text">Q:sleep()方法与yield()方法有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中止线程的方法有那些？"><span class="toc-text">中止线程的方法有那些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Synchronized和Lock有什么异同"><span class="toc-text">Synchronized和Lock有什么异同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是守护线程？"><span class="toc-text">什么是守护线程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#join（）方法的作用是什么？"><span class="toc-text">join（）方法的作用是什么？</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简述线程、程序、进程的基本概念。以及他们之间关系是什么"><a href="#简述线程、程序、进程的基本概念。以及他们之间关系是什么" class="headerlink" title="简述线程、程序、进程的基本概念。以及他们之间关系是什么?"></a>简述线程、程序、进程的基本概念。以及他们之间关系是什么?</h2><p>（1）程序是含有指令和数据的文件，被存储在磁盘或其他的数据存储设备中，也就是说程序是静态的代码。</p>
+<p>（2）进程是指一段正在执行的程序，是系统运行程序的基本单位，因此进程是动态的。</p>
+<p>（3）线程与进程相似，但线程是一个比进程更小的执行单位，它是程序执行的最小单元。</p>
+<h3 id="进程与线程的关系"><a href="#进程与线程的关系" class="headerlink" title="进程与线程的关系"></a>进程与线程的关系</h3><p>一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
+<h3 id="程序、进程、线程之间的关系？"><a href="#程序、进程、线程之间的关系？" class="headerlink" title="程序、进程、线程之间的关系？"></a>程序、进程、线程之间的关系？</h3><p>系统运行一个程序即是一个进程从创建，运行到消亡的过程。简单来说，一个进程就是一个执行中的程序，它在计算机中一个指令接着一个指令地执行着，同时，每个进程还占有某些系统资源如 CPU 时间，内存空间，文件，输入输出设备的使用权等等。换句话说，当程序在执行时，将会被操作系统载入内存中。 线程是进程划分成的更小的运行单位。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。从另一角度来说，进程属于操作系统的范畴，主要是同一段时间内，可以同时执行一个以上的程序，而线程则是在同一程序内几乎同时执行一个以上的程序段。</p>
+<h2 id="线程有哪些基本状态"><a href="#线程有哪些基本状态" class="headerlink" title="线程有哪些基本状态?"></a>线程有哪些基本状态?</h2><p>Java 线程在运行的生命周期中的指定时刻只可能处于下面 6 种不同状态的其中一个状态</p>
+<p><img src="/img/thread.png" alt=""></p>
+<p>线程在生命周期中并不是固定处于某一个状态而是随着代码的执行在不同状态之间切换。Java 线程状态变迁如下图所示</p>
+<p><img src="/img/java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%8F%98%E8%BF%81.png" alt=""></p>
+<p>由上图可以看出：</p>
+<p>线程创建之后它将处于 NEW（新建） 状态，调用 start() 方法后开始运行，线程这时候处于 READY（可运行） 状态。可运行状态的线程获得了 cpu 时间片（timeslice）后就处于 RUNNING（运行） 状态。</p>
+<pre><code>tips:操作系统隐藏 Java 虚拟机（JVM）中的 READY 和 RUNNING 状态，它只能看到 RUNNABLE 状态，所以 Java 系统一般将这两个状态统称为 RUNNABLE（运行中） 状态 。</code></pre><p>当线程执行 wait()方法之后，线程进入 WAITING（等待） 状态。进入等待状态的线程需要依靠其他线程的通知才能够返回到运行状态，而 TIME_WAITING(超时等待) 状态相当于在等待状态的基础上增加了超时限制，比如通过 sleep（long millis）方法或 wait（long millis）方法可以将 Java 线程置于 TIMED WAITING 状态。当超时时间到达后 Java 线程将会返回到 RUNNABLE 状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 BLOCKED（阻塞） 状态。线程在执行 Runnable 的run()方法之后将会进入到 TERMINATED（终止） 状态。</p>
+<h2 id="Java如何实现多线程？"><a href="#Java如何实现多线程？" class="headerlink" title="Java如何实现多线程？"></a>Java如何实现多线程？</h2><p>（1）继承Thread类，重写run()方法</p>
+<p>（2）实现Runnable接口，并实现该接口的run()方法<br>   􀁆1)    自定义类并实现Runnable接口，实现run()方法。<br>     2)    创建T缸ead对象，用实现Runnable接口的对象作为参数实例化该Thread对象。<br>     3)    调用Thread的start()方法。</p>
+<p>（3）实现Callable接口，重写call()方法<br>Callable 接口实际是属于Executor框架中的功能类，Callable接口与Runnable接口的功能类似，但提供了比Runnable更强大的功能，主要表现为以下3点：<br>     1）Callable 可以在任务结束后提供一个返回值，Runnable无法提供这个功能。<br>     2）Callable中的call（）方法可以抛出异常，而Runnable的run（）方法不能抛出异常。<br>     3）运行Callable可以拿到一个Future对象，Future对象表示异步计算的结果，它提供了检查计算是否完成的方法。由于线程属于异步计算模型，因此无法从别的线程中得到函数的返回值，在这种情况下，就可以使用Future来监视目标线程调用call（）方法的情况，当调用Future的get（）方法以获取结果时，当前线程就会阻塞，直到call（）方法结束返回结果。</p>
+<h3 id="Q：一个类是否可以同时继承Thread与实现-Runnable-接口？"><a href="#Q：一个类是否可以同时继承Thread与实现-Runnable-接口？" class="headerlink" title="Q：一个类是否可以同时继承Thread与实现 Runnable 接口？"></a>Q：一个类是否可以同时继承Thread与实现 Runnable 接口？</h3><p>可以</p>
+<pre><code>public class Test extends Thread implements Runnable {
+    public static void main(String args[]){
+        Threadt=new Thread(new Test()); t. start();
+    }
+}</code></pre><p>Test类实现了Runnable接口，但是并没有实现接口的run()方法，但实际它是能够编译通过并运行的，因为Test类从Thread类中继承了run()方法，这个继承的run()方法可以被当作对 Runnable 接口的实现，因此这段代码能够编译通过。当然也可以不使用继承的run()方法，而是需要通过在Test类中重写run()方法来实现Runnable接口中的run()方法</p>
+<h2 id="run-方法与start-方法的区别？"><a href="#run-方法与start-方法的区别？" class="headerlink" title="run()方法与start()方法的区别？"></a>run()方法与start()方法的区别？</h2><p>（1）系统通过调用线程类的start（）方法来启动一个线程，此时该线程处于就绪状态，而非运行状态，也就意味着这个线程可以被JVM来调度执行。在调度过程中，JVM通过调用线程类的run（）方法来完成实际的操作，当run（）方法结束后，此线程就会终止。</p>
+<p>（2）如果直接调用线程类的run（）方法，这会被当作一个普通的函数调用，程序中仍然只有主线程这一个线程，也就是说，start方法（）能够异步地调用run（）方法，但是直接调用run（）方；法却是同步的，因此也就无法达到多线程的目的。</p>
+<p>（3）由此可知，只有通过调用线程类的start（）方法才能真正达到多线程的目的。</p>
+<h2 id="多线程同步的实现方法有那些"><a href="#多线程同步的实现方法有那些" class="headerlink" title="多线程同步的实现方法有那些"></a>多线程同步的实现方法有那些</h2><p>（1）synchronized 关键字</p>
+<p>1）synchronized 方法。 在方法的声明前加入 synchronized 关键字， 示例如下：</p>
+<pre><code>   public synchronized void mutiThreaclAccess() ;</code></pre><p>2）synchronized 块。 synchronized 块既可以把任意的代码段声明为 synchronized , 也可以指定上锁的对象，有非常高的灵活性。</p>
+<pre><code>  tips:但这都对程序的效率有很大的影响。</code></pre><p>（2）wait() 方法与 notify()方法</p>
+<p>当使用synchronized来修饰某个共享资源时，如果线程Al在执行synchronized代码，另外一个线程 A2 也要同时执行同一对象的同一synchronized代码时，线程A2将要等到线程Al执行完成后，才能继续执行。在这种清况下可以使用wait()方法和 notify()方法。</p>
+<p>（3）Lock</p>
+<p>JDK5新增加了Lock接口以及它的一个实现类 ReentrantLock(重入锁），Lock也可以用来实现多线程的同步，具体而言，它提供了如下一些方法来实现多线程的同步：</p>
+<pre><code>1) lock()。以阻塞的方式获取锁，也就是说，如果获取到了锁，立即返回；
+   如果别的线程待有锁，当前线程等待，直到获取锁后返回。
+
+2) tryLock()。以非阻塞的方式获取锁。只是尝试性地去获取一下锁，
+   如果获取到锁，立即返回true,否则，立即返回false。
+
+3) tryLock(long timeout, TimeUnit unit)。如果获取了锁，立即返回即true, 
+   否则会等待参数给定的时间单元，在等待的过程中，如果获取了锁， 就返回true, 如果等待超时，返回false。
+
+4)locklnterruptibly ()。如果获取了锁，立即返回；如果没有获取锁，当前线程处于休眠状态，直到获得锁，
+   或者当前线程被别的线程中断（会收到InterruptedException异常）。
+
+   它与lock()方法最大的区别在千如果lock()方法获取不到锁，会一直处于阻塞状态，且会忽略interrupt()方法：</code></pre><h2 id="sleep（）方法和wait（）方法的区别"><a href="#sleep（）方法和wait（）方法的区别" class="headerlink" title="sleep（）方法和wait（）方法的区别?"></a>sleep（）方法和wait（）方法的区别?</h2><p>sleep()方法与wait()方法的区别主要表现在以下几个方面：</p>
+<p>（1）原理不同。sleep()方法是Thread类的静态方法， 是线程用来控制自身流程的，它会使此线程暂停执行一段时间，而把执行机会让给其他线程， 等到计时时间一到，此线程会自动 “苏醒 ＂ ；<br>而wait（）方法是Object类的方法，用于线程间的通信，这个方法会使当前拥有该对象锁的进程等待，直到其他线程调用notify()方法（或notify All 方法）时才“醒”来，不过开发人员也可以给它指定一个时间，自动”醒”来。</p>
+<p>（2） 对锁的处理机制不同。由于sleep()方法的主要作用是让线程暂停执行一段时间，时间一到则自动恢复，不涉及线程间的通信，因此，调用sleep()方法并不会释放锁。<br>而wait()方法则不同，当调用wait()方法后，线程会释放掉它所占用的锁，从而使线程所在对象中的其他synchronized数据可被别的线程使用。</p>
+<p>（3）使用区域不同。由于wait()方法的特殊意义， 因此它必须放在同步控制方法或者同步语句块中使用，而sleep()方法则可以放在任何地方使用。</p>
+<p>（4）sleep()方法必须捕获异常，而wait()、notify()以及notifyall()不需要捕获异常。在sleep的过程中，有可能被其他对象调用它的interrupt(), 产生InterruptedException异常。</p>
+<h3 id="Q-sleep-方法与yield-方法有什么区别？"><a href="#Q-sleep-方法与yield-方法有什么区别？" class="headerlink" title="Q:sleep()方法与yield()方法有什么区别？"></a>Q:sleep()方法与yield()方法有什么区别？</h3><p>（1）sleep（）方法给其他线程运行机会时不考虑线程的优先级，因此会给低优先级的线程以运行的机会，而yield（）方法只会给相同优先级或更高优先级的线程以运行的机会。</p>
+<p>（2）线程执行sleep（）方法后会转入阻寨状态，所以，执行sleep（）方法的线程在指定的时间内肯定不会被执行，而yield（）方法只是使当前线程重新回到可执行状态，所以执行yield（）方法的线程有可能在进入到可执行状态后马上又被执行。</p>
+<p>（3）sleep（）方法声明抛出InterruptedException，而yield（）方法没有声明任何异常。</p>
+<p>（4）sleep（）方法比yield（）方法（跟操作系统相关）具有更好的可移植性。</p>
+<h2 id="中止线程的方法有那些？"><a href="#中止线程的方法有那些？" class="headerlink" title="中止线程的方法有那些？"></a>中止线程的方法有那些？</h2><p>在Java语言中， 可以使用 stop ()方法与suspend ( )方法来终止线程的执行。 </p>
+<p>（1）使用stop方法可以强行终止正在运行或挂起的线程，但使用stop方法是很危险的，就象突然关闭计算机电源，而不是按正常程序关机一样，可能会产生不可预料的结果，因此，并不推荐使用stop方法来终止线程。</p>
+<p>（2）使用interrupt方法来终端线程可分为两种情况：</p>
+<pre><code>（1）线程处于阻塞状态，如使用了sleep方法。
+
+（2）使用while（！isInterrupted（））{……}来判断线程是否被中断。</code></pre><p>在第一种情况下使用interrupt方法，sleep方法将抛出一个InterruptedException例外，而在第二种情况下线程将直接退出。</p>
+<p>Tips：在Thread类中有两个方法可以判断线程是否通过interrupt方法被终止。一个是静态的方法interrupted（），一个是非静态的方法isInterrupted（），这两个方法的区别是interrupted用来判断当前线是否被中断，而isInterrupted可以用来判断其他线程是否被中断。因此，while （！isInterrupted（））也可以换成while （！Thread.interrupted（））。</p>
+<h2 id="Synchronized和Lock有什么异同"><a href="#Synchronized和Lock有什么异同" class="headerlink" title="Synchronized和Lock有什么异同"></a>Synchronized和Lock有什么异同</h2><p>相同点：这两者都是Java提供的锁机制，以便实现对某个共享资源的同步。</p>
+<p>不同点：<br>I) 用法不 样。 在需要同步的对象中加入 synchronized 控制， synchronized 既可以加在方法上，也可以加在特定代码块中，括号中表示需要锁的对象。而Lock需要显式地指定起始位置和终止位置。synchronized 是托管给 JVM 执行的，而 Lock 的锁定是通过代码实现的，它有比 synchronized 更精确的线程语义。</p>
+<p>2) 性能不一样。 在JDK 5 中增加了一个 Lock 接口的实现类 ReentrantLock。它不仅拥有和 synchro血ed 相同的并发性和内存语义，还多了锁投票、定时锁、等候和中断锁等。它们的性能在不同的清况下会有所不同：在资源竞争不是很激烈的情况下， synchronized 的性能要优于 ReentrantLock, 但是在资源竞争很激烈的情况下， synchronized 的性能会下降得非常快， 而 ReentrantLock的性能基本保持不变。</p>
+<p>3) 锁机制不一样。 synchronized 获得锁和释放的方式都是在块结构中，当获取多个锁时，必须以相反的顺序释放，并且是自动解锁，不会因为出了异常而导致锁没有被释放从而引发死锁。而 Lock 则需要开发人员手动去释放，并且必须在 finally 块中释放，否则会引起死锁问题的发生。此外， Lock 还提供了更强大的功能，它的tryLock()方法可以采用非阻塞的方式去获取锁。</p>
+<h2 id="什么是守护线程？"><a href="#什么是守护线程？" class="headerlink" title="什么是守护线程？"></a>什么是守护线程？</h2><p>所谓的守护线程，指的是程序运行时在后台提供的一种通用服务的线程。比如垃圾回收线程就是一个很称职的守护者，并且这种线程并不属于程序中不可或缺的部分。因此，当所有的非守护线程结束时，程序也就终止了，同时会杀死进程中的所有守护线程。反过来说，只要任何非守护线程还在运行，程序就不会终止。</p>
+<p>事实上，User Thread（用户线程）和Daemon Thread（守护线程）从本质上来说并没有什么区别，唯一的不同之处就在于虚拟机的离开：如果用户线程已经全部退出运行了，只剩下守护线程存在了，虚拟机也就退出了。 因为没有了被守护者，守护线程也就没有工作可做了，也就没有继续运行程序的必要了。</p>
+<h2 id="join（）方法的作用是什么？"><a href="#join（）方法的作用是什么？" class="headerlink" title="join（）方法的作用是什么？"></a>join（）方法的作用是什么？</h2><p>在Java语言中，join()方法的作用是让调用该方法的线程在执行完run()方法后， 再执行join方法后面的代码。 简单点说，就是将两个线程合并，用于实现同步功能。具体而言，可以通过线程A的join()方法来等待线程A的结束，或者使用线程A的join(2000)方法来等待线程A的结束，但最多只等待2s, </p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDM3Ny8yNjg2Nw==">
+        <script type="text/javascript">
+			(function(d, s) {
+				var j, e = d.getElementsByTagName(s)[0];
+
+				if (typeof LivereTower === 'function') { return; }
+
+				j = d.createElement(s);
+				window.livereOptions = {
+					eagerLoading: true,
+					scrollEventTargetSelector: '#post'
+                }
+				j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				j.async = true;
+				e.parentNode.insertBefore(j, e);
+			})(document, 'script');
+        </script>
+        <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2020 feng-ling
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

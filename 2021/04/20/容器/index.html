@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>容器 | Feng-ling</title>
+  <meta name="keywords" content=" List、Set、Map ">
+  <meta name="description" content="容器 | Feng-ling">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://feng-ling.github.io/about/index.html">
+<meta property="og:site_name" content="Feng-ling">
+<meta property="og:description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-05T08:51:18.000Z">
+<meta property="article:modified_time" content="2020-06-05T08:51:18.497Z">
+<meta property="article:author" content="feng-ling">
+<meta property="article:tag" content="study">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="DL">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="Recsys">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/timg.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+</div>
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/timg.jpg" />
+</a>
+<div class="author">
+    <span>feng-ling</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/feng-ling" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/6087302136" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/mr-shen-92" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:2503792903@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2503792903&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(17)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基础知识">Java基础知识<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="多线程">多线程<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="容器">容器<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="异常处理">异常处理<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java IO">Java IO<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java测试">Java测试<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java关键字">Java关键字<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java基本类型">Java基本类型<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java面向对象">Java面向对象<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java内存">Java内存<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java字符串与数组">Java字符串与数组<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="22.7k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>点云配准</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>多线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>平台、内存、JVM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>深度学习</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异常处理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>字节流、字符流、序列化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Character、Array、<?></a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java关键字</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本概念</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java基本类型与运算</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java面向对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Junit、反射、注解</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>List、Set、Map</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Point Cloud Registration</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 Java测试 "
+           href="/2021/04/24/%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA/"
+           data-tag="Junit、反射、注解"
+           data-author="" >
+            <span class="post-title" title="基础加强">基础加强</span>
+            <span class="post-date" title="2021-04-24 14:13:01">2021/04/24</span>
+        </a>
+        
+        <a  class="全部文章 多线程 "
+           href="/2021/04/21/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="多线程">多线程</span>
+            <span class="post-date" title="2021-04-21 18:27:47">2021/04/21</span>
+        </a>
+        
+        <a  class="全部文章 容器 "
+           href="/2021/04/20/%E5%AE%B9%E5%99%A8/"
+           data-tag="List、Set、Map"
+           data-author="" >
+            <span class="post-title" title="容器">容器</span>
+            <span class="post-date" title="2021-04-20 13:54:36">2021/04/20</span>
+        </a>
+        
+        <a  class="全部文章 Java内存 "
+           href="/2021/04/19/Java%E5%B9%B3%E5%8F%B0%E4%BA%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"
+           data-tag="平台、内存、JVM"
+           data-author="" >
+            <span class="post-title" title="Java平台与内存管理">Java平台与内存管理</span>
+            <span class="post-date" title="2021-04-19 15:04:04">2021/04/19</span>
+        </a>
+        
+        <a  class="全部文章 Java IO "
+           href="/2021/04/17/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/"
+           data-tag="字节流、字符流、序列化"
+           data-author="" >
+            <span class="post-title" title="输入输出流">输入输出流</span>
+            <span class="post-date" title="2021-04-17 16:05:29">2021/04/17</span>
+        </a>
+        
+        <a  class="全部文章 异常处理 "
+           href="/2021/04/16/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"
+           data-tag="异常处理"
+           data-author="" >
+            <span class="post-title" title="异常处理">异常处理</span>
+            <span class="post-date" title="2021-04-16 17:07:29">2021/04/16</span>
+        </a>
+        
+        <a  class="全部文章 Java字符串与数组 "
+           href="/2021/04/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84/"
+           data-tag="Character、Array、&lt;?&gt;"
+           data-author="" >
+            <span class="post-title" title="字符串&amp;数组&amp;泛型">字符串&amp;数组&amp;泛型</span>
+            <span class="post-date" title="2021-04-15 21:07:26">2021/04/15</span>
+        </a>
+        
+        <a  class="全部文章 Java基本类型 "
+           href="/2021/04/14/Java%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97/"
+           data-tag="Java基本类型与运算"
+           data-author="" >
+            <span class="post-title" title="Java基本类型与运算">Java基本类型与运算</span>
+            <span class="post-date" title="2021-04-14 20:04:40">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java关键字 "
+           href="/2021/04/14/Java%E5%85%B3%E9%94%AE%E5%AD%97/"
+           data-tag="Java关键字"
+           data-author="" >
+            <span class="post-title" title="Java关键字">Java关键字</span>
+            <span class="post-date" title="2021-04-14 14:15:18">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java面向对象 "
+           href="/2021/04/14/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="Java面向对象"
+           data-author="" >
+            <span class="post-title" title="Java面向对象">Java面向对象</span>
+            <span class="post-date" title="2021-04-14 11:07:07">2021/04/14</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts7-13/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts7-13">JavaBasicConcepts7-13</span>
+            <span class="post-date" title="2021-04-09 20:58:40">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 Java基础知识 "
+           href="/2021/04/09/JavaBasicConcepts1-6/"
+           data-tag="Java基本概念"
+           data-author="" >
+            <span class="post-title" title="JavaBasicConcepts1-6">JavaBasicConcepts1-6</span>
+            <span class="post-date" title="2021-04-09 17:30:33">2021/04/09</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/DCP/"
+           data-tag="点云配准,深度学习"
+           data-author="" >
+            <span class="post-title" title="Deep Closest Point－Learning Representations for Point Cloud Registration">Deep Closest Point－Learning Representations for Point Cloud Registration</span>
+            <span class="post-date" title="2020-10-30 21:38:25">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/Registration/"
+           data-tag="Point Cloud Registration"
+           data-author="" >
+            <span class="post-title" title="点云配准概述">点云配准概述</span>
+            <span class="post-date" title="2020-10-30 14:36:46">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 算法 "
+           href="/2020/10/30/ICP/"
+           data-tag="ML,算法"
+           data-author="" >
+            <span class="post-title" title="ICP算法的SVD求解">ICP算法的SVD求解</span>
+            <span class="post-date" title="2020-10-30 14:02:12">2020/10/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/06/05/Test/"
+           data-tag="hexo,3-hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo使用说明">Hexo使用说明</span>
+            <span class="post-date" title="2020-06-05 15:02:57">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2020/06/05/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-06-05 14:54:13">2020/06/05</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-容器" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">容器</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="容器">容器</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">List、Set、Map</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-04-21 18:27:10'>2021-04-20 13:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection集合"><span class="toc-text">Collection集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是迭代器（Iterator）"><span class="toc-text">什么是迭代器（Iterator）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代器的介绍"><span class="toc-text">迭代器的介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConcurrentMoclificationException-异常"><span class="toc-text">ConcurrentMoclificationException 异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法："><span class="toc-text">解决方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator-与-Listlterator-有什么区别？"><span class="toc-text">Iterator 与 Listlterator 有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList、Vector和LinkedList有什么区别？"><span class="toc-text">ArrayList、Vector和LinkedList有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap、HashTable、TreeMap和WeakHashMap有那些区别？"><span class="toc-text">HashMap、HashTable、TreeMap和WeakHashMap有那些区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap、HashTable-不同点"><span class="toc-text">HashMap、HashTable 不同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TreeMap"><span class="toc-text">TreeMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WeakHashMap、HashMap"><span class="toc-text">WeakHashMap、HashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap添加元素的操作过程"><span class="toc-text">HashMap添加元素的操作过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题："><span class="toc-text">开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection和Collections有什么区别？"><span class="toc-text">Collection和Collections有什么区别？</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h2><p><img src="/img/collection.png" alt="Collection集合"></p>
+<p>集合类的特点:提供一种存储空间可变的存储模型，存储的数据容量可以随时发生改变</p>
+<p>集合类的概述：Collection是单例集合的顶层接口，它表示一组对象，这些对象也称为Collection的元素，同时，JDK 不提供此接口的任何直接实现，它提供更具体的子接口（如Set和List）实现。</p>
+<h2 id="什么是迭代器（Iterator）"><a href="#什么是迭代器（Iterator）" class="headerlink" title="什么是迭代器（Iterator）"></a>什么是迭代器（Iterator）</h2><h3 id="迭代器的介绍"><a href="#迭代器的介绍" class="headerlink" title="迭代器的介绍"></a>迭代器的介绍</h3><p>（1）迭代器，集合的专用遍历方式，它提供了一种访问一个容器对象中的各个元素，而又不必暴露该对象内部细节的方法。</p>
+<p>（2）Iterator iterator()：返回此集合中元素的迭代器，通过集合的iterator()方法得到<br>     1)使用容器的iterator()方法返回一个 Iterator, 然后通过Iterator的next()方法返回第一个元素。<br>     2)使用Iterator的hasNext()方法判断容器中是否还有元素，如果有，可以使用next()方法获取下一个元素。<br>     3)可以通过 remove()方法删除迭代器返回的元素。</p>
+<p>（3）迭代器是通过集合的iterator()方法得到的，所以我们说它是依赖于集合而存在的</p>
+<h3 id="ConcurrentMoclificationException-异常"><a href="#ConcurrentMoclificationException-异常" class="headerlink" title="ConcurrentMoclificationException 异常"></a>ConcurrentMoclificationException 异常</h3><p>该异常通常是由使用Iterator遍历容器的同时又对容器做增加或者删除的操作所导致的，或者由于多线程操作导致的，一个线程堆容器进行遍历，另一个线程进行增、删操作。</p>
+<p>单线程抛出该异常的原因，详解：</p>
+<p>出上述异常的主要原因是当调用容器的iterator()方法返回Iterator对象时，把容器中包含对象的个数赋值给了一个变量expectedModCount,在调用next()方法时会比较变量expectedModCount与容器中实际对象的个数modCount的值是否相等，若二者不相等，则会抛出ConcurrentMo邮cationException异常，因此在使用Iterator 遍历容器的过程中，如果对容器进行增加或删除操作，就会改变容器中对象的数量，从而导致抛出异常。 </p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>在遍历的过程中把需要删除的对象保存到一个集合中，等遍历结束后在调用removeAll()方法来删除，或者使用iterator.remove()方法。</p>
+<h3 id="Iterator-与-Listlterator-有什么区别？"><a href="#Iterator-与-Listlterator-有什么区别？" class="headerlink" title="Iterator 与 Listlterator 有什么区别？"></a>Iterator 与 Listlterator 有什么区别？</h3><p>Iterator只能正向遍历集合，适用于获取移除元素。ListIterator继承自Iterator, 专门针对List集合，可以从两个方向来遍历 List, 同时支持元素的修改。</p>
+<h2 id="ArrayList、Vector和LinkedList有什么区别？"><a href="#ArrayList、Vector和LinkedList有什么区别？" class="headerlink" title="ArrayList、Vector和LinkedList有什么区别？"></a>ArrayList、Vector和LinkedList有什么区别？</h2><p>（1）ArrayList、Vector和LinkedList类均在util包下，均为可收缩数组，即可以动态改变数组的长度。</p>
+<p>（2）ArrayList、Vector都是基于array来实现的，因此对他们的操作是增、删慢，改、查块；LinkedList是基于是基于双向列表来实现的，因此随机访问的效率低，即改、查慢，增、删快。</p>
+<p>（3）ArrayList不是线程安全的，Vector是线程安全的，同时，LinkedList也是非线程安全的容器。</p>
+<p>（4）对数据的主要操作为索引或只在集合的末端增加、删除元素时，使用ArrayList或Vector效率比较高；当对数据的操作主要为指定位置的插入或删除操作时，使用 LinkedLlst效率比较高；当在多线程中使用容器 时（即多个线程会同时访问该容器），选用Vector较为安全。</p>
+<h2 id="HashMap、HashTable、TreeMap和WeakHashMap有那些区别？"><a href="#HashMap、HashTable、TreeMap和WeakHashMap有那些区别？" class="headerlink" title="HashMap、HashTable、TreeMap和WeakHashMap有那些区别？"></a>HashMap、HashTable、TreeMap和WeakHashMap有那些区别？</h2><h3 id="HashMap、HashTable-不同点"><a href="#HashMap、HashTable-不同点" class="headerlink" title="HashMap、HashTable 不同点"></a>HashMap、HashTable 不同点</h3><pre><code>①轻重：HashMap是HashTable的轻量级实现（非线程安全的实现）
+
+②线程安全：HashTable是线程安全的，HashMap不是线程安全的。
+
+③key是否可以为空：主要区别在于HashMap允许空（null）键值（key）,而HashTable不允许
+
+④HashMap废除了contains方法：HashMap废弃了HashTable的contains方法去掉了，两者中都有containsValue和containsKey
+
+⑤遍历：HashTable使用Enumeration，HashMap使用Iterator
+
+⑥LinkedHashMap</code></pre><p>HashMap输入输出顺序一般不一致，若要一致。LinkedHashMap是hashMap的一个子类，如果需要输出的顺序和输入的相同，那么用LinkedHashMap可以实现，它还可以按照读取顺序来排序.</p>
+<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>一般而言，在Map中插入、删除和定位元素，HashMap是最好的选择。由于TreeMap实现了SortMap接口，能够把它保存的记录根据键排序，因此，取出来的是排序后的键值对，如果需要按自然顺序或自定义顺序遍历键，那么TreeMap会更好。</p>
+<h3 id="WeakHashMap、HashMap"><a href="#WeakHashMap、HashMap" class="headerlink" title="WeakHashMap、HashMap"></a>WeakHashMap、HashMap</h3><p>WeakHashMap中的key采用的是“弱引用”的方式，只要WeakHashMap中的key不再被外部引用，它就可以被垃圾回收器回收。而HashMap中的key采用的是“强引用的方式”，当HashMap中的key没有被外部引用时，只有在这个key从HashMap中删除后，才可以被垃圾回收器回收。</p>
+<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Q1:在HashTable上下文中，同步指什么</p>
+<p>A:同步意味这在同一个时间点只能有一个线程可以修改hash表，任何线程在执行HashTable的更新操作前都需要获取对象锁，其他线程则等待锁的释放</p>
+<p>Q2:如何实现HashMap的同步？</p>
+<p>A:HashMap可以通过Map m=Collections.synchronizedMap(new HashMap())达到同步的效果。具体而言，该方法返回一个同步的Map，该Map封装了底层的HashMap的所有方法，使得底层的HashMap即使是多线程下，也是安全的。</p>
+<h2 id="HashMap添加元素的操作过程"><a href="#HashMap添加元素的操作过程" class="headerlink" title="HashMap添加元素的操作过程"></a>HashMap添加元素的操作过程</h2><p>（1）首先，调用key的hashCode()方法生成一个hash值h1,如果这个h1在HashMap中不存在，那么直接将&lt;key,value&gt;添加到HashMap中；</p>
+<p>（2）如果这个hl已经存在，那么找出HashMap中所有hash值为hl的key,然后分别调用key的equals()方法判断当前添加的key值是否与巳经存在的key值相同。 </p>
+<p>（3）如果equals()方法返回true,说明当前需要添加的key已经存在，那么HashMap会使用新的value值来覆盖掉旧的value值；</p>
+<p>（4）如果equals()方法返回false, 说明新增加的key在HashMap中不存在，因此会在HashMap中创建新的映射关系。</p>
+<p>（5）当新增加的key的hash值已经在HashMap中存在时，就会产生冲突。</p>
+<p>（6）一般而言，对于不同的key值可能会得到相同的hash值，因此就需要对冲突进行处理。一般而言，处理冲突的方法有开放地址法、再hash法、链地址法等。 HashMap 使用的是链地址法来解决冲突。</p>
+<h2 id="开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题："><a href="#开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题：" class="headerlink" title="开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题："></a>开发者在使用自定义类作为HashMap的key时，需要注意以下几个问题：</h2><p>1)如果想根据对象的相关属性来自定义对象是否相等的逻辑，此时就需要重写equals()方法，一旦重写了equals()方法，那么就必须重写hashCode()方法。</p>
+<p>2)当自定义类的多项作为HashMap (HashTable)的key时， 最好把这个类设计为不可变类。</p>
+<p>3)从HasbMap的工作原理可以看出， 如果两个对象相等， 那么这两个对象有着相同的ashCode, 反之则不成立。</p>
+<h2 id="Collection和Collections有什么区别？"><a href="#Collection和Collections有什么区别？" class="headerlink" title="Collection和Collections有什么区别？"></a>Collection和Collections有什么区别？</h2><p>Collection是一个集合接口。它提供了对集合对象进行基本操作的通用接口方法。实现该接口的类主要有List和Set,该接口的设计目标是为各种具体的集合提供最大化的统一的操作方式。</p>
+<p>Collections是针对集合类的一个包装类，它提供一系列静态方法以实现对各种集合的搜索、排序、反转、线程安全化等操作，其中大多数方法都是用来处理线性表。 </p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDM3Ny8yNjg2Nw==">
+        <script type="text/javascript">
+			(function(d, s) {
+				var j, e = d.getElementsByTagName(s)[0];
+
+				if (typeof LivereTower === 'function') { return; }
+
+				j = d.createElement(s);
+				window.livereOptions = {
+					eagerLoading: true,
+					scrollEventTargetSelector: '#post'
+                }
+				j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				j.async = true;
+				e.parentNode.insertBefore(j, e);
+			})(document, 'script');
+        </script>
+        <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2020 feng-ling
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
