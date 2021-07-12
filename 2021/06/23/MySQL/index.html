@@ -151,7 +151,15 @@
 
 
 <ul>
-    <li><div class="all active" data-rel="全部文章">全部文章<small>(18)</small></div></li>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(19)</small></div></li>
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(2)</small></div>
+                
+            </li>
+            
+        
     
         
             
@@ -257,14 +265,6 @@
             
         
     
-        
-            
-            <li><div data-rel="MySQL">MySQL<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -275,8 +275,8 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="18">
-<input type="hidden" id="yelog_site_word_count" value="32.8k">
+<input type="hidden" id="yelog_site_posts_number" value="19">
+<input type="hidden" id="yelog_site_word_count" value="36.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -397,6 +397,10 @@
                 <i class="iconfont icon-tag"></i><a>Point Cloud Registration</a>
             </li>
         
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
     </div>
 
 </div>
@@ -404,7 +408,15 @@
     
     <nav id="title-list-nav">
         
-        <a  class="全部文章 MySQL "
+        <a  class="全部文章 数据库 "
+           href="/2021/07/12/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="redis">redis</span>
+            <span class="post-date" title="2021-07-12 22:24:25">2021/07/12</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
            href="/2021/06/23/MySQL/"
            data-tag="MySQL"
            data-author="" >
@@ -577,7 +589,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="MySQL">MySQL</a>
+            <a  data-rel="数据库">数据库</a>
             
         </span>
         
@@ -592,12 +604,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-24 19:58:33'>2021-06-23 19:57</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-12 22:25:09'>2021-06-23 19:57</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:10.1k</span>
+        <span>字数:10.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -935,7 +947,7 @@ SELECT COUNT(*) FROM student WHERE class = &#39;95031&#39;;
 SELECT s_no, c_no FROM score WHERE degree = (SELECT MAX(degree) FROM score);
 
 --  排序查询
--- LIMIT r, n: 表示从第r行开始，查询n条数据
+-- LIMIT r, n: 表示从第r行开始，查询n条数据（如果存在两个或者多个最高分的话，会存在BUG）
 SELECT s_no, c_no, degree FROM score ORDER BY degree DESC LIMIT 0, 1;</code></pre>
 <h3 id="分组计算平均成绩"><a href="#分组计算平均成绩" class="headerlink" title="分组计算平均成绩"></a>分组计算平均成绩</h3><p><strong>查询每门课的平均成绩。</strong></p>
 <pre><code class="mysql">-- AVG: 平均值
@@ -1903,10 +1915,10 @@ COMMIT;
 ROLLBACK;</code></pre>
 <h3 id="事务的-ACID-特征与使用"><a href="#事务的-ACID-特征与使用" class="headerlink" title="事务的 ACID 特征与使用"></a>事务的 ACID 特征与使用</h3><p><strong>事务的四大特征：</strong></p>
 <ul>
-<li><strong>A 原子性</strong>：事务是最小的单位，不可以再分割；</li>
-<li><strong>C 一致性</strong>：要求同一事务中的 SQL 语句，必须保证同时成功或者失败；</li>
-<li><strong>I 隔离性</strong>：事务1 和 事务2 之间是具有隔离性的；</li>
-<li><strong>D 持久性</strong>：事务一旦结束 ( <code>COMMIT</code> ) ，就不可以再返回了 ( <code>ROLLBACK</code> ) 。</li>
+<li><strong>A 原子性</strong>：事务是最小的执行单位，不可以再分割；事务的原子性确保对数据库的操作要么全部执行，要么全不执行；原子性要求事务必须被完整执行。</li>
+<li><strong>C 一致性</strong>：要求同一事务执行前后，数据保持一致；例如转账业务中，无论转账是否成功，转账者和收款人的总额应该是不变的；</li>
+<li><strong>I 隔离性</strong>：并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；</li>
+<li><strong>D 持久性</strong>：事务一旦结束 ( <code>COMMIT</code> ) ，就不可以再返回了 ( <code>ROLLBACK</code> ) 。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响</li>
 </ul>
 <h3 id="事务的隔离性"><a href="#事务的隔离性" class="headerlink" title="事务的隔离性"></a>事务的隔离性</h3><p><strong>事务的隔离性可分为四种 ( 性能从低到高 )</strong> ：</p>
 <ol>
