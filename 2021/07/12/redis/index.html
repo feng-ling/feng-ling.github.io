@@ -604,7 +604,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-07-12 22:26:00'>2021-07-12 22:24</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-12 22:33:24'>2021-07-12 22:24</time>
         
     </div>
     <div class="article-meta">
@@ -628,7 +628,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日内容"><span class="toc-text">今日内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis"><span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例："><span class="toc-text">案例：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日内容"><span class="toc-text">今日内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例："><span class="toc-text">案例：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -650,7 +650,7 @@
     3. 命令操作
         1. 数据结构
     4. 持久化操作
-    5. 使用Java客户端操作redis</code></pre><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><pre><code>1. 概念： redis是一款高性能的NOSQL系列的非关系型数据库
+    5. 使用Java客户端操作redis</code></pre><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><pre><code>### 1. 概念： redis是一款高性能的NOSQL系列的非关系型数据库
 
 
     1.1.什么是NOSQL
@@ -724,7 +724,7 @@
             •    分布式集群架构中的session分离
 
 
-2. 下载安装
+### 2. 下载安装
     1. 官网：https://redis.io
     2. 中文网：http://www.redis.net.cn/
     3. 解压直接可以使用：
@@ -732,7 +732,7 @@
         * redis-cli.exe：redis的客户端
         * redis-server.exe：redis服务器端
 
-3. 命令操作
+### 3. 命令操作
     1. redis的数据结构：
         * redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构
             * value的数据结构：
@@ -840,7 +840,7 @@
         3. del key：删除指定的key value
 
 
-4. 持久化
+### 4. 持久化
     1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。
     2. redis持久化机制：
         1. RDB：默认方式，不需要进行配置，默认就使用这种机制
@@ -864,7 +864,7 @@
                 appendfsync everysec ： 每隔一秒进行一次持久化
                 # appendfsync no     ： 不进行持久化
 
-5. Java客户端 Jedis
+### 5. Java客户端 Jedis
     * Jedis: 一款java操作redis数据库的工具.
     * 使用步骤：
         1. 下载jedis的jar包
