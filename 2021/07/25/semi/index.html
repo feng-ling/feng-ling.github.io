@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>字符串&amp;数组&amp;泛型 | Feng-ling</title>
-  <meta name="keywords" content=" Character、Array、&lt;?&gt; ">
-  <meta name="description" content="字符串&amp;数组&amp;泛型 | Feng-ling">
+  <title>Unsupervised Learning of 3D Point Set Registration | Feng-ling</title>
+  <meta name="keywords" content=" -SEMI-Learning ">
+  <meta name="description" content="Unsupervised Learning of 3D Point Set Registration | Feng-ling">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a blog recording personal learning records including study,ML,DL,GNN and Recsys.">
 <meta property="og:type" content="website">
@@ -597,9 +597,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-字符串与数组" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-semi" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">字符串&amp;数组&amp;泛型</h1>
+        <h1 class="article-title">Unsupervised Learning of 3D Point Set Registration</h1>
     
     <div class="article-meta">
         
@@ -609,7 +609,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Java字符串与数组">Java字符串与数组</a>
+            <a  data-rel="-PointCloud">-PointCloud</a>
             
         </span>
         
@@ -617,19 +617,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Character、Array、&lt;?&gt;</a>
+            <a class="color5">-SEMI-Learning</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-04-16 17:06:05'>2021-04-15 21:07</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-28 13:58:13'>2021-07-25 20:49</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1k</span>
+        <span>字数:5.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -648,7 +648,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串的创建与存储是什么机制？"><span class="toc-text">字符串的创建与存储是什么机制？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“-”、equals和hashCode有什么区别？"><span class="toc-text">“&#x3D;&#x3D;”、equals和hashCode有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String、StringBuffer、StringBuilder、StringTokenizer有什么区别？"><span class="toc-text">String、StringBuffer、StringBuilder、StringTokenizer有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中的数组是不是对象？"><span class="toc-text">Java中的数组是不是对象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是泛型"><span class="toc-text">什么是泛型</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1介绍"><span class="toc-text">1介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2相关工作"><span class="toc-text">2相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2基于学习的配准方法"><span class="toc-text">2.2基于学习的配准方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3方法"><span class="toc-text">3方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1问题概述"><span class="toc-text">3.1问题概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2空间相关性表示"><span class="toc-text">3.2空间相关性表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3变换解码器"><span class="toc-text">3.3变换解码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4损失函数"><span class="toc-text">3.4损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5优化策略"><span class="toc-text">3.5优化策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4实验"><span class="toc-text">4实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1数据集"><span class="toc-text">4.1数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2实验设置"><span class="toc-text">4.2实验设置</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -664,20 +664,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串的创建与存储是什么机制？"><a href="#字符串的创建与存储是什么机制？" class="headerlink" title="字符串的创建与存储是什么机制？"></a>字符串的创建与存储是什么机制？</h2><p>（1）在JVM中存在一个字符串池，当String s = “abc”,会首先在字符串池中查找是否有相同的字符被定义，其判断依据是String类的equals方法的返回值。若已定义则直接返回其引用，不需要返回其对象；<br>（2）若没有定义，则首先会创建这个对象，然后将这个字符串加入到字符串池中，再将它的引用返回。</p>
-<h2 id="“-”、equals和hashCode有什么区别？"><a href="#“-”、equals和hashCode有什么区别？" class="headerlink" title="“==”、equals和hashCode有什么区别？"></a><font color = "F08080">“==”、equals和hashCode有什么区别？</font></h2><p>（1）”==”可以用于比较两个基本类型的数据或两个引用类型的变量是否相；如果是基本数据类型，则是比较他们对应的值是否相等；如果是引用类型的变量，则比较的是引用在内存中的地址是否相同，即引用是否指向同一个实例对象，而不是比较对象中的内容是否相同。</p>
-<p>（2）equals是Object类提供的方法之一。如果，在没有覆盖equals方法的情况下，equals实现的功能与“==”是一样的，但是开发人员可以通过重写equals方法来比较两个对象中的数据内容是否相等。</p>
-<p>（3）hashCode（）也是从Object类中继承而来，也是用来比较对象是否相等的，与equals唯一的区别在与，它返回的是int类型的值。</p>
-<pre><code> 一般在重写equals方法的时候，同时也要覆盖hashCode方法，否则会违反Object.hashCode的通用约定，导致所有基于hash值的集合类无法正常运行。
-
- hashCode()方法的返回值和equals()方法的关系如下：如果x.equals(y)返回true, 即两个对象根据equals方法比较是相等的，那么调用这两个对象中任意一个对象的hashCode()方法都必须产生同样的整数结果。如果x.equals (y)返回false, 即两个对象根据equals()方法比较是不相等的，那么x和y的hashCode()方法的返回值有可能相等，也有可能不相等。
-
- 反之，hasbCode()方法的返回值不相等，一定能推出equals()方法的返回值也不相等，而 hashCode）方法的返回值相等，equals方法的返回值则可能相等，也可能不相等。</code></pre><h2 id="String、StringBuffer、StringBuilder、StringTokenizer有什么区别？"><a href="#String、StringBuffer、StringBuilder、StringTokenizer有什么区别？" class="headerlink" title="String、StringBuffer、StringBuilder、StringTokenizer有什么区别？"></a><font color = "F08080">String、StringBuffer、StringBuilder、StringTokenizer有什么区别？</font></h2><p>（1）String用于字符串操作，属于不可变类，StringBuffer也用于字符串操作，但是属于可变类；</p>
-<p>（2）String 与StringBuffer的另外一个区别在于当实例化String时，可以利用构造函数（String s1=new String（”world”））的方式来对其进行初始化，也可以用赋值（Strings=”Hello”）的方式来初始化，</p>
-<pre><code> 而StringBuffer只能使用构造函数（StringBuffer s=new StringBuffer（&quot;Hello&quot;））的方式来初始化。</code></pre><p>（3）StringBuilder也可以被修饰的字符串，它与StringBuffer类似，都是字符串缓冲区，但StringBuilder不是线程安全的，如果只是在单线程中使用字符串缓冲区，那么StringBuilder的效率会更高些。</p>
-<pre><code> 因此在只有单线程访问时可以使用StringBuilder，当有多个线程访问时，最好使用线程安全的StringBuffer.</code></pre><p>（4）在执行效率方面，StringBuilder最高，StringBuffer次之，String最低，鉴于这一情况，一般而言，如果要操作的数据量比较小，应优先使用String类；如果是在单线程下操作大量数据，应优先使用StringBuilder类；如果是在多线程下操作大量数据，应优先考虑StringBuffer类。</p>
-<h2 id="Java中的数组是不是对象？"><a href="#Java中的数组是不是对象？" class="headerlink" title="Java中的数组是不是对象？"></a>Java中的数组是不是对象？</h2><p>Java语言中，数组有自己的属性（length），也有一些方法可以调用（clone）。由于对象的特点是封装了属性和行为，因此从这个角度上来讲，数组是对象。</p>
-<h2 id="什么是泛型"><a href="#什么是泛型" class="headerlink" title="什么是泛型"></a>什么是泛型</h2><p>泛型是对JAVA语言类型系统的一种扩展，以支持创建可以按类型进行参数化的类，可以把类型参数看作是使用参数化类型时指定的类型的一个占位符，就像方法的形式参数是运行时传递的值的占位符一样。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>点云配准是通过搜索几何变换来对齐一对点集的过程。最近的工作利用深度学习的力量来注册一对点集。然而，不幸的是，深度学习模型通常需要大量的ground truth样本来进行训练。此外，对于一对源和目标点集，现有的深度学习机制需要明确设计的编码器来从非结构化点云提取深度空间特征及其空间相关性表示，其被进一步馈送到解码器以回归用于点集对齐的期望几何变换。为了进一步增强点集配准的深度学习模型，提出了一种新的基于深度空间相关表示特征的无监督配准框架Deep-3DAligner。SCR特征以无编码方式描述了源和目标点集之间空间相关性的几何本质。更具体地说，我们的方法从优化随机初始化的潜在SCR特征开始，然后将其解码为几何变换(即旋转和平移)，以对齐源和目标点集。我们的Deep-3DAligner联合更新变换解码器的SCR特征和权重，以最小化无监督配准损失。我们在ModelNet40数据集上进行了实验，以验证我们的无监督Deep-3DAligner在点集配准方面的性能。结果表明，即使没有groundtruth样本和任何训练源和目标点集之间直接对应的假设，我们提出的方法与最近的最先进的监督方法相比也取得了比较好的性能。<br>Key Words:3D, Point Set, Registration, Matching, Deep Learning</p>
+<hr>
+<h2 id="1介绍"><a href="#1介绍" class="headerlink" title="1介绍"></a>1介绍</h2><p>点集配准是一项富有挑战性而又有意义的任务，它在许多领域都有广泛的应用[1]、[2]、[3]、[4]、[5]、[6]、[7]、[8]。例如，点集配准算法可用于将局部帧池与全局帧池对齐，以进行大规模3D重建或3D映射[9]。大多数现有的非学习方法通过迭代优化过程来解决配准问题，以搜索最优几何变换，以最小化变换后的源点集和目标点集之间的预定对准损失[10]、[11]、[12]、[13]。几何变换可以通过特定类型的参数变换(例如旋转、平移、薄板样条等)来建模[14]。例如，最常用的方法之一，迭代最近点(ICP) [14]，基于一组相应的点来估计刚性变换。然而，国际比较方案模型强烈依赖于初始化，在选择相应的点方面表现有限。此外，迭代方法通常将配准视为每个给定的源和目标点集对的独立优化过程，这不能将知识从一对配准转移到另一对。<br>近年来，基于深度学习的算法在各行各业得到了应用并取得了巨大的成功，研究人员越来越有兴趣将基于深度学习的解决方案引入点集配准领域。如图1所示，基于学习的方法通常利用现代特征提取技术进行特征学习，然后基于在源和目标形状的提取特征上定义的互信息和相关性来回归变换矩阵，而不是在非基于学习的方法中直接优化变换矩阵以使对准损失最小化。最近的模型，深度最近点(DCP) [15]，利用DGCNN [16]进行特征学习和指针网络来执行软匹配。为了细化软匹配结果以预测最终的刚性变换，DCP模型进一步提出了用于微调的奇异值分解层。然而，设计一个明确的模块来学习非结构化点云的特征及其“几何关系”仍然具有挑战性[17]。现有的工作开发了各种模型来计算空间相关性特征。例如，FlowNet3D [18]连接了源和目标点集的两个全局描述符；[19]使用基于U-Net的结构来混合源和目标体积形状；[20]提出了由源和目标特征图计算相关张量等。相比之下，我们的论文提出了一种新的无监督配准框架Deep-3DAligner，如图1所示，它依赖于直接可优化的SCR特征，而不需要设计特征编码器和相关模块。此外，Deep-3d校准器是以无监督的方式进行训练的，这不同于使用含有ground truth的样本(即旋转和平移矩阵)进行训练的DCP。<br>随着SCR特性的发展，我们提出的Deep3DAligner框架如图2所示，它包含三个主要组件。第一个组件是SCR优化器，其中深度SCR功能是从随机初始化的功能优化而来的。第二个组件是变换解码器，它对SCR特征进行解码，以回归点集对齐的变换参数。第三个组成部分是对齐损失，用于测量转换后的源点集和目标点集之间的相似性。在管道中，有两条通信路线，用黑色和红色虚线表示。黑色的通信路径用于Deep-3DAligner的数据流，其中源和目标点集被用作输入。红色的通信路径是反向传播路径，对准损耗通过该路径反向传播，以更新SCR和变换解码器。我们的贡献如下:<br>(1)针对点集配准问题，提出了一种新的无监督学习方法。<br>(2)与基于学习的方法相比，我们引入了空间相关性表示(SCR)特征，该特征可以消除对源和目标点集之间的空间相关性进行编码的设计挑战。<br>(3)实验结果证明了该方法对于点集配准的有效性，并且即使没有ground truth的训练样本的条件下，我们提出的方法与最新的监督方法相比也取得了比较好的性能。<br><img src="/img/semi1.jpg" alt="以前的学习方法、直接优化方法和我们的Deep-3DAligner之间的管道比较，用于点集配准。我们的方法从优化随机初始化的潜在空间相关表示(SCR)特征开始，然后将其解码为所需的几何变换，以对齐源点云和目标点云，避免了特征编码器和相关模块的显式设计，这对于点云输入来说通常是具有挑战性的，并且通过利用深度神经网络的结构，与直接优化方法相比，增加了模型的复杂性。"></p>
+<hr>
+<h2 id="2相关工作"><a href="#2相关工作" class="headerlink" title="2相关工作"></a>2相关工作</h2><p>2.1迭代配准方法<br>在过去的几十年中，在迭代程序中估计刚性和非刚性几何变换的优化算法的发展引起了广泛的研究关注。假设一对点集通过刚性变换相关联，标准方法是在迭代搜索例程中估计最佳平移和旋转参数，其旨在最小化两组点之间的距离度量。迭代最近点(ICP)算法[14]是刚性配准的一种成功解决方案。它初始化一个刚性函数的估计，然后迭代地选择相应的点来改善变换。然而，ICP算法容易受到用于初始变换估计的对应点的选择的影响。Go-ICP [21]由Yang等人进一步提出，利用BnB方案搜索整个三维运动空间，解决ICP带来的局部初始化问题。周等人提出了用于部分重叠3D表面配准的快速全局配准（FGR）[22]。崔和Rangarajan[23]提出了TPS-RSM算法来估计非刚性变换的参数，并对二阶导数进行了惩罚。作为一种经典的非参数方法，相干点漂移(CPD)是由Myronenko等人[10]提出的，该方法成功地引入了一个拟合高斯混合似然的过程，以对齐源点集和目标点集。现有的经典算法在配准任务上取得了巨大的成功。尽管独立的迭代优化过程限制了配准大量点云对的效率，但启发我们为此任务设计一个基于学习的系统。</p>
+<hr>
+<h2 id="2-2基于学习的配准方法"><a href="#2-2基于学习的配准方法" class="headerlink" title="2.2基于学习的配准方法"></a>2.2基于学习的配准方法</h2><p>近年来，基于学习的方法在计算机视觉的许多领域取得了巨大的成功[24]、[25]、[26]、[27]、[28]、[29]、[30]、[31]、[32]、[33]。特别是最近的工作开启了从点云(尤其是3D点)直接学习几何特征的趋势，这促使我们使用深度神经网络[19]，[20]，[27]，[28]，[29]，[30]，[34]，[35]，[36]，[37]来解决点云配准问题。PointNetLK [38]是由青木等人提出的，利用新提出的PointNet算法直接从点云中提取特征，而经典的Lucas&amp;Kanade算法用于三维点集的刚性配准。刘等人提出了FlowNet3D[18]，将3D点云配准视为点与点之间的运动过程。Wang等人提出了一种深度最近点[15]模型，该模型首先利用DGCNN结构从点集中提取特征，然后在此基础上回归期望的变换。Balakrishnan等人[19]提出了一种voxelMorph CNN架构来学习配准域，以对齐两个体素医学图像。<br>对于2D图像的配准，Rocco等人提出了一种优秀的配准模型[20]。对于上面列出的基于学习的配准解决方案，主要挑战涉及如何在基于学习的方法中有效地建模源和目标对象之间的“几何关系”。例如，[20]提出了源图像和目标图像的特征图之间的相关张量。[19]利用基于U-Net的结构来连接源和目标体素的特征。[18] [38]使用基于点网的结构，而[15]使用DGCNN结构从点集学习特征，用于进一步的配准解码。<font color=#FF0000>相比之下，我们首先提出一种无模型结构来跳过编码步骤。我们在不预先定义模型的情况下初始化SCR特征，该模型将根据配准损耗反向传播过程中的网络权重进行优化。</font></p>
+<hr>
+<h2 id="3方法"><a href="#3方法" class="headerlink" title="3方法"></a>3方法</h2><p>概述：<br>我们将在以下部分介绍我们的方法。首先，我们在3.1节中定义了基于学习的配准问题。在第3.2节中，我们介绍了我们的空间相关性表示。变换解码器如3.3节所示。在第3.4节中，我们给出了损失函数的定义。第3.5节说明了新定义的优化策略。</p>
+<hr>
+<h2 id="3-1问题概述"><a href="#3-1问题概述" class="headerlink" title="3.1问题概述"></a>3.1问题概述</h2><p>给定训练数据集D = {(Si，Gj)，其中Si，Gj ⊂ RN(N = 2或N = 3)}，用于配准问题的基于深度学习的方法的优化任务通常可以如下方式定义。我们使用gθ(Si，Gj) = φ表示深度神经网络的，其中φ表示网络预测的结果。刚性点集配准用齐次变换矩阵表示，该矩阵由旋转矩阵R ∈ SO(3)和平移向量t ∈ R3组成。给定一对输入源和目标点集(Si，Gj)，训练好的模型能够基于神经网络结构中的优化权重θ来预测参数φ。变换后的源和目标点集之间的配准度量可以定义为更新权重θ的目标损失函数。对于给定的数据集D，通常可以使用基于随机梯度下降算法来优化权重θ，以便最小化预定义的损失函数:<br><img src="/img/al1.jpg" alt=""><br>其中L表示相似性度量。</p>
+<hr>
+<h2 id="3-2空间相关性表示"><a href="#3-2空间相关性表示" class="headerlink" title="3.2空间相关性表示"></a>3.2空间相关性表示</h2><p>本文中，我们将空间相关性表示定义为表征给定源和目标点集之间的空间相关性本质的潜在特征。如图1所示，为了计算SCR特征，源和目标点集通常被馈送到先前工作中的特征(即点网[27])，用于深度空间特征提取，然后是预定义的相关模块(即[20])。然而，与假定网格结构输入(例如2D图像)的可用性的标准离散卷积相比，为非结构点云设计合适的特征编码器是具有挑战性的。此外，针对一对输入空间特征的相关模块的设计对变换解码器具有显著影响。手工设计用于提取个体空间特征和空间相关性特征的模块的局限性促使我们设计如下所述的基于无模型的SCR。<br>为了消除特征编码器和相关模块中手工设计的副作用，如图2所示，我们为每对点集定义了一个可训练的潜在SCR(空间相关表示)特征。如图1所示，我们的SCR优化器将输入作为随机初始化的潜在向量来推理点集注册任务的最佳SCR，它取代了以前手工制作的特征编码器和相关模块。更具体地说，如图2所示，对于一对源和目标点集(S，G)，来自高斯分布的随机初始化的潜在向量z作为初始化的SCR。在训练过程中，初始化的SCR与变换解码器一起被优化。这样，与以前的方法相比，我们避免了显式定义两个点集之间的空间相关性的挑战性问题，而是在模型训练过程中从随机初始化状态简单地优化SCR特征。SCR的隐式设计允许Deep-3d Aligner在空间相关特征学习中具有更大的灵活性，这对于未看到的点集的对齐更具适应性。</p>
+<hr>
+<h2 id="3-3变换解码器"><a href="#3-3变换解码器" class="headerlink" title="3.3变换解码器"></a>3.3变换解码器</h2><p>给定上述空间相关表示(SCR)特征，然后我们设计一个解码网络来回归期望的变换参数，如图2所示。更具体地说，我们首先通过将源点集S中每个点x的坐标与其对应的SCR特征z叠加来公式化输入。我们将该输入记为[x，z]。然后，我们定义了一个多层感知器(MLP)架构，用于学习刚性变换的参数，以将源点集向目标点集变换。该架构包括具有ReLU激活功能的连续MLP层，{gi}i=1，2，…，s，gi: Rvi→ Rvi+1，其中vi和vi+1分别是层输入和输出的尺寸。然后，我们使用一个最大池层来精确全局特征L，计算如下:<br><img src="/img/al2.jpg" alt=""><br>其中符号[<em>，</em>]表示同一域中矢量的连接。<br>我们进一步通过第二网络将全局特征L解码为变换参数，第二网络包括具有ReLU激活函数{γi}i=1，2.。。t个连续MLP层，…，tsuchγI:Rwi→Rwi+1，其中wi和wi+1分别是层输入和输出的维数。<br><img src="/img/al3.jpg" alt=""><br>现在，我们可以获得转换的源点集S’<br><img src="/img/a14.jpg" alt=""><br>其中，Tφ表示由预测的变换参数φ定义的变换函数。基于变换后的源点集和目标点集，我们可以在下一节中进一步定义配准损失函数。<br><img src="/img/semi2.jpg" alt="对于一对输入源和目标点集，我们的方法从SCR优化过程开始，以生成空间相关性表示特征，并且变换回归过程进一步将SCR特征解码为期望的几何变换。对齐损失被反向传播，以在训练过程中更新变换解码器和SCR特征的权重。测试过程中，变换解码器的权重保持不变而不更新。"></p>
+<hr>
+<h2 id="3-4损失函数"><a href="#3-4损失函数" class="headerlink" title="3.4损失函数"></a>3.4损失函数</h2><p>在我们的无监督环境中，我们没有有监督的训练样本，也不假设这两个点集之间有直接的对应关系。因此，需要两个点集之间的距离度量，而不是点/像素损失。此外，一个合适的度量应该是可微分的，并且计算效率高。本文采用[39]中提出的倒角距离作为损失函数。倒角损失是在两个不对应的点集上定义的简单有效的对齐度量。我们将变换后的源点集Tφ(S)和目标点集G之间的切角损失公式化为:<br><img src="/img/al5.jpg" alt=""><br>其中φ表示定义变换的所有参数，并且φ是基于优化的SRC特征和训练的解码器从我们的模型中预测的。</p>
+<hr>
+<h2 id="3-5优化策略"><a href="#3-5优化策略" class="headerlink" title="3.5优化策略"></a>3.5优化策略</h2><p>在第3.2节中，我们定义了一组可训练的潜在向量z，每对点集对应一个潜在向量z作为SCR特征。在训练过程中，使用基于随机梯度下降的算法，这些潜在向量与网络解码器的权重一起被优化。对于给定的训练数据集D，我们的训练过程可以表示为:<br><img src="/img/al6.jpg" alt=""><br>其中L代表预定义的损失函数.<br>对于给定的测试数据集W，我们固定网络参数θ=θ’’’optimal，并且只优化SRC特征:<br><img src="/img/al7.jpg" alt=""><br>这里学习的解码器网络参数θ为SRC的优化提供了先验知识。在该优化过程之后，期望的变换可以由tφ= Tgθ(si，z~ optimal)确定，并且变换之后的的源点集可以由Si’= Tφ(Si),∀Si∈ W生成。</p>
+<hr>
+<h2 id="4实验"><a href="#4实验" class="headerlink" title="4实验"></a>4实验</h2><p>总结：<br>我们分别在第4.1节和第4.2节中描述了实验数据集和设置。在第4.3节和第4.4节中，我们测试了模型在不同设置下的性能，并将模型的性能与最先进的方法进行了比较。在第4.5节中，我们进一步证明了我们的模型在存在脉冲噪声时的鲁棒性。在第4.6节中，我们进一步证明了我们的模型在存在直流噪声时的鲁棒性。在第4.7节中，我们进一步证明了我们的模型在存在直流噪声时的鲁棒性。在第4.8节中，我们将模型的性能与直接优化版本进行了比较。</p>
+<hr>
+<h2 id="4-1数据集"><a href="#4-1数据集" class="headerlink" title="4.1数据集"></a>4.1数据集</h2><p>我们在ModelNet40数据集上测试了我们的三维点集配准模型的性能。该数据集包含来自40个类别的12311个预处理的计算机辅助设计模型。对于每个三维点对象，我们从其表面均匀采样1024个点。按照先前工作的设置，点被居中并重新缩放以适合单位球体。<br>为了证明我们的模型在存在各种噪声类型时的鲁棒性，我们向目标点集添加噪声以进行模型评估。为了准备位置漂移噪声，对目标点集中的每个点应用零均值高斯。点扩散噪声的水平被定义为高斯噪声的标准偏差。为了准备数据不完全性噪声，我们从整个点集中随机移除一定数量的点。直流噪声水平定义为消除点与整个集合的比率。为了准备数据异常值(D.O)噪声，我们向点集随机添加由零均值高斯生成的一定数量的点。输出噪声水平定义为增加的点与整个点集的比率。</p>
+<hr>
+<h2 id="4-2实验设置"><a href="#4-2实验设置" class="headerlink" title="4.2实验设置"></a>4.2实验设置</h2><p>我们使用来自训练数据集{(Si，Gi)|Si，Gi∈ D}i=1，2，…我们将批量b设置为128。潜在向量从维数为2048的高斯分布N(0，1)初始化。对于解码网络，第一部分包括2个MLP层(256，128)和一个最大池层。然后，我们使用3个额外的MLP，维度为(128，64，3)用于解码旋转矩阵，维度为(128，64，3)用于解码平移矩阵。我们使用泄漏-ReLU [40]激活函数，并对除输出层之外的每一层实现批处理规范化[41]。我们的模型是用亚当优化器优化的。学习率被设置为0.001，在每个时期指数衰减为0.995。对于离群点和缺失点的情况，我们将倒角距离裁剪为固定值0.1。<br>我们使用均方误差(MSE)、均方根误差(RMSE)和平均绝对误差(MAE)来衡量我们的模型和所有比较方法的性能。较低的值表示较好的对齐性能。我们结果中的所有角度测量都是以度为单位的。基本事实标签仅用于性能评估，不用于训练过程。<br>对于性能评估，我们将我们的方法与监督和非监督方法进行了比较。当前的研究结果是通过DCP实现的，DCP是一种有监督的方法，包括四个不同的版本。DCPv1+MLP版本使用深度神经网络(DNNs)对转换进行建模。DCPv2+MLP版本通过集成监督注意力机制来提高其性能。DCPv1+SVD通过集成额外的基于SVD的微调过程，进一步提升了其性能，DCPv2+SVD同时集成了注意力和SVD，进一步提升了性能。由于我们的Deep-3d校准器是一种无监督的方法，并且仅使用DNNs作为辅助函数来建模转换，因此我们将使用DCPv1+MLP作为比较的基线模型。</p>
+<hr>
 
       
        <hr><span style="font-style: italic;color: gray;"> 本文参考多篇博文杂合自己的思考，如有任何侵权，请及时联系修改，同时欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2503792903@qq.com </span>
